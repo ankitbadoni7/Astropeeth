@@ -1180,7 +1180,7 @@ background:linear-gradient(90deg, rgba(128, 35, 35, 1), #D1043E 15%, #252424 100
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("Images/horoscope_bg1.svg"), url("/horoscope_bg2.svg");
+    background-image: url("Images/horoscope_bg1.svg"), url("Images/horoscope_bg2.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: left center, right center;
     background-size: 220px auto, 220px auto;
