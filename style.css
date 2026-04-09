@@ -1973,6 +1973,13 @@ margin-top: 100px;
     .sign-in{
         transform: translateY(10px);
     }
+    .phone{
+    display: block;
+    transform: translateY(10px)
+}
+.phone span{
+    display: none;
+}
     .top-strip {
         display: none;
         position: absolute;
@@ -2683,7 +2690,13 @@ margin-top: 100px;
 .desktop-only  {
         display: none;
     }
-
+.phone{
+    display: block;
+    transform: translateY(10px)
+}
+.phone span{
+    display: none;
+}
     .header-right {
         gap: 15px;
         transform: translateX(0);
