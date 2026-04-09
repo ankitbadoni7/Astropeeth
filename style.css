@@ -350,7 +350,6 @@ p {
     width: fit-content;
     font-family: var(--font-para);
     padding: 8px 16px;
-    margin-top: 8px;
     margin-left: 35px;
     background: #8B1A42;
     color: #fff;
@@ -1977,7 +1976,7 @@ margin-top: 100px;
     }
 
     .hero-heading {
-        font-size: 16px;
+        font-size: 20px;
         line-height: 1.3;
     }
 
@@ -1986,6 +1985,7 @@ margin-top: 100px;
         max-width: 100%;
         padding: 0 10px;
         margin-bottom: 5px;
+        max-width: 250px;
     }
     .hero-subtext br{
         display: none;
@@ -2017,11 +2017,28 @@ margin-top: 100px;
         padding: 6px 12px;
         font-size: 14px;
         display: block;
-        margin: 15px auto 0 auto;
+        margin: 8px auto 0 auto;
         float: none;
         border-radius: 8px;
     }
     
+.panel-header h2 {
+    font-size: 28px;
+    color: #851739;
+    font-weight: 800;
+    margin-bottom: 4px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.panel-header .date {
+    font-size: 18px;
+    color: rgba(56, 56, 56, 1);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: var(--font-body);
+    text-align: center;
+}
     
     .hero-panel {
         position: static;
@@ -2065,8 +2082,161 @@ margin-top: 100px;
         width: 100%;
         padding: 12px 0;
     }
+    .astrologers-section
+    {    padding: 40px 10px;}
 
+    .astrologers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .astrologers-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .astro-card {
+        border-width: 2px;
+    }
+
+    .astro-top {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    .img-wrapper {
+        width: 46px;        
+    }
+    .astro-profile {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(130, 0, 37, 0.1);
+        padding-bottom: 10px;
+        width: 100%;
+    }
+    .astro-details {
+        align-items: center;
+        width: 100%;
+    }
+
+    .name-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 5px;
+    }
     
+    .name-row h3 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .info-row {
+        font-size: 12px;
+        justify-content: center;
+    }
+
+    .astro-bottom {
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .price-info {
+        text-align: center;
+    }
+
+    .rate {
+        font-size: 18px;
+    }
+
+    .action-icons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .icon-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .icon-btn img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .horoscope-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 0 10px;
+        overflow-x: hidden;
+    }
+    .horoscope-card {
+        padding: 10px 5px;
+        height: auto;
+        min-height: 140px;
+    }
+
+    .horoscope-card img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 4px;
+    }
+
+    .horoscope-card h3 {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .horoscope-card p {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .horoscope-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+.horoscope-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    background-image: url("Images/horoscope_bg1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.09;
+    z-index: 0;
+    
+    transform: rotate(90deg);
+}  
+.horoscope-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 650px;
+     width: 350px;
+    height: 350px;
+    background-image: url("Images/horoscope_bg2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.09;
+    z-index: 0;
+    transform: rotate(90deg);
+}
+    .services-section {
+        padding: 20px;
+    }
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -2075,7 +2245,178 @@ margin-top: 100px;
     .services-title {
         font-size: 28px;
     }
-    .seen-grid {
+
+    .gemstones-section {
+        padding: 40px 15px;
+    }
+
+    .gemstones-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .gemstones-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .gemstone-card {
+        padding: 6px;
+        z-index: 2;
+    }
+
+    .gemstone-info h3 {
+        font-size: 10px;
+        white-space: normal;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .buy-btn {
+        padding: 2px 8px;
+        font-size: 13px;
+    }
+
+    .gemstones-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    background-image: url("Images/horoscope_bg1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.09;
+    z-index: 0;
+    transform: rotate(90deg);
+}  
+.gemstones-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 480px;
+     width: 350px;
+    height: 350px;
+    background-image: url("Images/horoscope_bg2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.09;
+    z-index: 0;
+    transform: rotate(90deg);
+   
+}
+
+.videos-section {
+        padding: 40px 15px;
+    }
+
+    .videos-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .videos-scroll {
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    .video-card {
+        min-width: 200px;
+        border-radius: 15px;
+    }
+
+    .video-thumb {
+        border-radius: 10px;
+    }
+
+    .play-overlay {
+        width: 45px;
+        height: 45px;
+    }
+
+    .play-overlay img.play-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .video-info {
+        padding: 10px;
+    }
+
+    .video-info p {
+        font-size: 13px;
+    }
+
+    .testimonials-section {
+        padding: 40px 15px;
+        margin-top: 20px;
+    }
+
+    .testimonials-section::before {
+        background-size: 150px auto, 150px auto;
+    }
+
+    .testimonials-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-card {
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    .testimonial-content {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .testimonial-header {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .client-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .client-meta h3 {
+        font-size: 16px;
+    }
+
+    .star-icon {
+        font-size: 14px;
+    }
+
+    .testimonial-text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .dot.active {
+        width: 20px;
+        height: 6px;
+    }
+
+  .seen-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
@@ -2087,23 +2428,157 @@ margin-top: 100px;
     .seen-info h3 {
         font-size: 16px;
     }
+
+    .blogs-section {
+        padding: 40px 15px;
+        margin-top: 30px;
+    }
+
+    .blogs-section::before {
+        background-size: 180px auto, 180px auto;
+    }
+
+    .blogs-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .blogs-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .blog-card {
+        padding: 6px;
+    }
+
+    .blog-header {
+        margin: 15px 20px 5px 15px;
+    }
+
+    .blog-header h3 {
+        font-size: 18px;
+    }
+
+    .blog-arrow-svg {
+        width: 18px;
+        height: 18px;
+        transform: translateX(10px);
+    }
+
+    .blog-content-area p {
+        font-size: 12px;
+        margin: 0 20px 0 15px;
+    }
+
+    .blog-footer {
+        padding: 15px;
+    }
+
+    .author-info img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .author-info span, .blog-date {
+        font-size: 11px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .dot.active {
+        width: 20px;
+        height: 6px;
+    }
+
     .faq-wrapper {
         flex-direction: column;
         padding: 20px 15px;
+        gap: 12px;
     }
 
     .faq-column {
         width: 100%;
     }
-
+    .faq-title{
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
     .faq-question h3 {
-        font-size: 14px;
+        font-size: 10px;
         line-height: 1.4;
     }
-
+   .faq-answer p {
+        font-size: 8px;
+        line-height: 1.5;
+        margin-top: 2px;
+    }
     .faq-icon, .faq-icon-up {
         width: 28px;
         height: 28px;
         transform: translateX(5px);
     }
+
+    .footer-section {
+        padding: 40px 20px;
+    }
+    .download-apps h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .app-buttons img {
+    height: 40px;
+    cursor: pointer;
+}
+    
+    .footer-section:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    
+    width: 350px;
+    height: 350px;
+}
+ .footer-section:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 850px;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    opacity: 0.09;
+}
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 10px;
+       
+    }
+    .app-buttons {
+        justify-content: center;
+    }
+}
+.footer-links {
+    gap: 50px;
+    margin-top: 45px;
+}
+
+    .link-column ul li {
+    margin-bottom: 10px;
+}
+.link-column h3 {
+    font-size: 14px;}
+
+.link-column ul li a {
+    font-size: 12px;
+   
+}
+.footer-social {
+    margin-top: 20px;
 }
