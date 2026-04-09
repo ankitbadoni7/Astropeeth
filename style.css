@@ -1948,7 +1948,7 @@ margin-top: 100px;
 }
 }
 
-@media (min-width: 651px) and (max-width: 1000px) {
+@media (min-width: 650px) and (max-width: 1000px) {
     
 .hamburger-menu img {
         transform: translateY(10px);
@@ -2250,14 +2250,18 @@ margin-top: 100px;
     .horoscope-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        padding: 0 10px;
+        gap: 20px;
+        padding: 50px;
         overflow-x: hidden;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
     .horoscope-card {
         padding: 10px 5px;
         height: auto;
         min-height: 140px;
+        max-width: 280px;
     }
 
     .horoscope-card img {
@@ -2338,7 +2342,7 @@ margin-top: 100px;
     .gemstones-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        max-width: 600px;
+        max-width: 700px;
         margin: 0 auto;
     }
 
@@ -2589,11 +2593,11 @@ margin-top: 100px;
         margin-bottom: 25px;
     }
     .faq-question h3 {
-        font-size: 10px;
+        font-size: 12px;
         line-height: 1.4;
     }
    .faq-answer p {
-        font-size: 8px;
+        font-size: 14px;
         line-height: 1.5;
         margin-top: 2px;
     }
@@ -3322,7 +3326,7 @@ margin-top: 100px;
         line-height: 1.4;
     }
    .faq-answer p {
-        font-size: 8px;
+        font-size: 10px;
         line-height: 1.5;
         margin-top: 2px;
     }
