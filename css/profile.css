@@ -22,39 +22,40 @@ body {
     --span-color: linear-gradient(120deg,rgba(37, 37, 37, 1), rgba(209, 4, 62, 1), rgba(44, 44, 44, 1));
 }
 
+
 @font-face {
     font-family: 'Satoshi';
-    src: url('Fonts/Satoshi-Regular.woff') format('woff2');
+    src: url('../Fonts/Satoshi-Regular.woff') format('woff2');
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'Stolzl';
-    src: url('Fonts/stolzl_light.woff2') format('woff2');
+    src: url('../Fonts/stolzl_light.woff2') format('woff2');
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'Stolzl';
-    src: url('Fonts/stolzl_book.woff2') format('woff2');
+    src: url('../Fonts/stolzl_book.woff2') format('woff2');
     font-weight: 350;
 }
 
 @font-face {
     font-family: 'Stolzl';
-    src: url('Fonts/stolzl_regular.woff2') format('woff2');
+    src: url('../Fonts/stolzl_regular.woff2') format('woff2');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Stolzl';
-    src: url('Fonts/stolzl_medium.woff2') format('woff2');
+    src: url('../Fonts/stolzl_medium.woff2') format('woff2');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Stolzl';
-    src: url('Fonts/stolzl_bold.woff2') format('woff2');
+    src: url('../Fonts/stolzl_bold.woff2') format('woff2');
     font-weight: 700;
 }
 
@@ -72,7 +73,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-family: var(--font-para);
 }
-
 /* ================= CONTAINER ================= */
 .container {
     max-width: 1200px;
