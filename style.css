@@ -167,7 +167,7 @@ p {
 /* ================= TOP STRIP ================= */
 .top-strip {
     width: 100%;
-    background: linear-gradient(111.75deg, #FFE2CB 0.68%, rgba(255, 180, 202, 0.51) 50.32%, #FFDDC1 99.97%);
+   background: linear-gradient(111.75deg, #FFE2CB 0.68%, rgba(255, 180, 202, 0.51) 50.32%, #FFDDC1 99.97%);
 
 }
 .with-arrow {
@@ -526,6 +526,13 @@ p {
     padding: 0 20px;
 }
 
+.card-link-wrapper {
+    text-decoration: none;
+    color: inherit; 
+    display: block;
+    width: 100%;
+}
+
 .astro-card {
     
   border: 4px solid transparent;
@@ -538,7 +545,7 @@ p {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
+    cursor: pointer;
 }
 
 .astro-top {

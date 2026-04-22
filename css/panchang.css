@@ -1,0 +1,397 @@
+/* active underline only text */
+.strip-item.active span::after {
+    display: none;
+}
+.breadcrumb-nav {
+    background-color: #ffffff;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-para);
+    color: rgba(102, 112, 133, 1);
+}
+
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: #666;
+    transition: 0.3s;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.breadcrumbs li a:hover {
+    color: #851739; 
+}
+
+
+.breadcrumbs li img.breadcrumb-separator {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs li.active {
+    color: #851739; 
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+/* ================= PANCHANG PAGE ================= */
+.panchang-page.kundli-hero {
+    padding: 50px 0;
+    background: linear-gradient(
+        111.75deg,
+        #FFE2CB 0.68%,
+        rgba(255, 180, 202, 0.51) 50.32%,
+        #FFDDC1 99.97%
+    );
+    overflow: hidden;
+    position: relative;
+}
+
+/* ================= LEFT IMAGE FIX ================= */
+.panchang-page .hero-image-box {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.panchang-bg {
+    position: absolute;
+    top: 410px;
+    left: 50%;
+    transform: translate(-55%, -74%);
+    width: 900px;
+  
+}
+
+/* ================= RIGHT CARD FIX ================= */
+.hero-card-box {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+  
+}
+
+/* ================= PANCHANG CARD ================= */
+.panchang-card {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 243, 242, 0.9);
+    padding: 30px;
+    border-radius: 18px;
+   box-shadow: 8px 8px 21.3px 0px rgba(9, 9, 9, 0.12);
+    z-index: 1;
+     transform: translateX(30px);
+     
+}
+
+/* ================= CARD TITLE ================= */
+.panchang-card .card-title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #222;
+   
+}
+/* ================= TABS ================= */
+.tab-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* BUTTON */
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #666;
+    position: relative;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* ACTIVE TAB */
+.tab-btn.active {
+    color: #f68a32;
+}
+
+/* UNDERLINE (perfect column based) */
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;  
+    height: 2px;
+    background: #f68a32;
+}
+
+/* ================= SECTION ================= */
+.panchang-section {
+    margin-bottom: 18px;
+}
+
+/* ================= SUB TITLE ================= */
+.panchang-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: rgba(19, 21, 21, 1);
+    font-family: var(--font-body);
+}
+
+/* ================= GRID ================= */
+.panchang-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 18px;  
+    margin-bottom: 30px;
+}
+
+.panchang-grid div {
+    display: flex;
+    align-items: center;
+     justify-content: space-between;
+     border-bottom: 1px solid rgba(255, 224, 197, 1)
+}
+
+.panchang-grid span {
+    font-size: 12px;
+    color: rgba(49, 49, 49, 1);
+    font-weight: 600;
+    
+}
+
+.panchang-grid p {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(62, 62, 62, 1);
+    margin: 2px 0 0;
+}
+
+/* ================= INFO ROW ================= */
+.panchang-info-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* INFO BOX */
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 236, 220, 1);
+    padding: 1px 2px;
+    border-radius: 8px;
+    
+    border: 2px solid transparent;
+    background-image: 
+        linear-gradient(rgba(255, 236, 220, 1), rgba(255, 236, 220, 1)), 
+        linear-gradient(111.75deg, #FFE2CB 0.68%, #FFB4CA 50.32%, #FFDDC1 99.97%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding: 10px 12px;
+    border-radius: 12px;
+    flex: 1;
+   
+}
+
+/* ICON */
+.info-box img {
+    width: 40px;
+}
+
+/* TEXT */
+.info-box p {
+    font-size: 12px;
+    margin: 0;
+    color: rgba(49, 49, 49, 1);
+    font-weight: 600;
+}
+
+.info-box span {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(62, 62, 62, 1);
+}
+
+
+/* ================= BOTTOM GRID ================= */
+.panchang-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* same as top grid */
+    gap: 14px 18px;
+    margin-top: 15px;
+  
+}
+
+/* EACH ITEM */
+.panchang-bottom .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(255, 224, 197, 1)
+}
+
+/* LEFT TEXT */
+.panchang-bottom span {
+    font-size: 11px;
+    color: rgba(49, 49, 49, 1);
+    font-weight: 600;
+}
+
+/* RIGHT TEXT */
+.panchang-bottom p {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(62, 62, 62, 1);
+    margin: 0;
+}
+
+
+/* SECTION: PANCHANG CONTENT INFO */
+.panchang-content-info {
+     padding: 70px 20px;
+    background-color: #ffffff;
+    color: rgba(79, 79, 79, 1);
+}
+
+.panchang-content-wrapper {
+     max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.panchang-content-block {
+    margin-bottom: 40px;
+}
+
+.panchang-content-title {
+     font-size: 40px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+.panchang-content-subtitle {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: var(--font-heading);
+    color: #000;
+    margin-bottom: 25px;
+    margin-top: 60px;
+}
+
+.panchang-content-text {
+      font-size: 19px;
+    margin-bottom: 15px;
+    font-family: var(--font-body);
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.panchang-content-note {
+       font-size: 19px;
+    margin-bottom: 15px;
+    font-family: var(--font-body);
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+/* Navigation Row */
+.cal-nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    color: #851739;
+    font-size: 14px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+    font-size: 10px;
+    color: rgba(49, 65, 88, 1);
+    
+}
+
+.cal-month-name {
+    font-weight: 400;
+    color: #333;
+   font-family: 'figtree', sans-serif;
+}
+
+/* 2-Line Compact Flex Grid */
+.compact-dates-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 8px; /* Horizontal and Vertical spacing */
+    margin-bottom: 25px;
+    justify-content: flex-start;
+}
+
+.compact-dates-grid .date {
+    width: 26px; 
+    height: 30px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #444;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.compact-dates-grid .date:hover:not(.active) {
+    background: #fdf2f4;
+}
+
+.compact-dates-grid .date.active {
+    background: #f68a32;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(246, 138, 50, 0.3);
+}
+
+.calendar-wrapper {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .panchang-content-title { font-size: 26px; }
+    .panchang-content-subtitle { font-size: 22px; }
+    .panchang-content-text { font-size: 14px; text-align: left; }
+}

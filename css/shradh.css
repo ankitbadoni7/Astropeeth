@@ -1,0 +1,36 @@
+.shradh-sub-text {
+    font-size: 16px;
+    color: rgba(76, 76, 76, 1);
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+.shradh-meta {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+    font-size: 15px;
+    font-family: var(--font-body);
+}
+
+.meta-item img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.shradh-card-title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-family: var(--font-body);
+    font-weight: 600;
+}

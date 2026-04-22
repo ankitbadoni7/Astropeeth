@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/kundali_matching.css">
+    <title>Astropeeth</title>
+</head>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="Images/logo.svg" alt="AstroPeeth Logo">
+        </div>
+
+        <div class="header-right">
+            <div class="header-item  phone desktop-only">
+                <img src="Images/phone.svg" alt="">
+                <span>Talk To Astrologer</span>
+            </div>
+
+            <div class="header-item talk-to-astro desktop-only">
+                <img src="Images/msg.svg" alt="">
+                <span>Talk To Astrologer</span>
+            </div>
+
+            <div class="header-item sign-in">
+                <img src="Images/user.svg" alt="">
+                <span>Sign In</span>
+            </div>
+
+            <div class="hamburger-menu" id="hamburger">
+                <img src="Images/hamburger.svg" alt="Menu">
+            </div>
+
+            <div class="language desktop-only">
+                <img src="Images/Language.svg" alt="">
+                <span>English</span>
+                <img src="Images/arrow-down.svg" class="arrow" alt="">
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <section class="top-strip">
+        <div class="container strip-container">
+
+            <div class="strip-item">
+
+                <span class="with-arrow">
+                    Kundali
+                    <img src="Images/arrow-down-red.svg" class="arrow" alt="">
+                </span>
+            </div>
+
+
+            <div class="strip-item active">
+
+                <span>Panchang</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Puja</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Reports</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Horoscope</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Shop</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Blog</span>
+            </div>
+
+        </div>
+    </section>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ul class="breadcrumbs">
+                <li>
+                    <a href="index.html">Home</a>
+                    <img src="Images/arrow-right.svg" alt="arrow" class="breadcrumb-separator">
+                </li>
+                <li class="active">Kundali Matching</li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="kundli-hero">
+        <div class="container">
+            <div class="hero-wrapper">
+
+                <div class="hero-image-box">
+                    <img src="Images/kundali_circle.png" alt="" class="circle-bg" aria-hidden="true">
+                    <img src="Images/kundali-matching.png" alt="Happy couple for Kundli matching" class="couple-img">
+                </div>
+
+                <div class="hero-card-box">
+                    <div class="matchmaking-card">
+                        <h2 class="card-title">Kundli Matchmaking</h2>
+
+                        <div class="tab-header" role="tablist">
+                            <button class="tab-btn active" role="tab" aria-selected="true">Enter Boy's Details</button>
+                            <button class="tab-btn" role="tab" aria-selected="false">Enter Girl's Details</button>
+                        </div>
+
+                        <form class="match-form">
+                            <div class="input-grid">
+                                <div class="form-group">
+                                    <label for="boy-name">Full Name</label>
+                                    <input type="text" id="boy-name" placeholder="Enter your Full Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="boy-dob">Date of Birth</label>
+                                    <div class="date-input-wrapper">
+                                        <input type="text" id="boy-dob" placeholder="Enter your Date of Birth">
+                                        <img src="Images/date.svg" class="icon-date" alt="" aria-hidden="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <div class="time-location-row">
+                                        <div class="time-section">
+                                            <label id="tob-label">Time of Birth</label>
+                                            <div class="time-inputs" role="group" aria-labelledby="tob-label">
+                                                <div class="select-wrapper">
+                                                    <select id="tob-hh" aria-label="Birth Hour">
+                                                        <option value="" selected disabled>HH</option>
+                                                        <option>01</option>
+                                                        <option>02</option>
+                                                        <option>03</option>
+                                                        <option>04</option>
+                                                        <option>05</option>
+                                                        <option>06</option>
+                                                        <option>07</option>
+                                                        <option>08</option>
+                                                        <option>09</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                    </select>
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
+                                                        aria-hidden="true">
+                                                </div>
+                                                <div class="select-wrapper">
+                                                    <select id="tob-mm" aria-label="birth minutes">
+                                                        <option value="" selected disabled>MM</option>
+                                                        <option>00</option>
+                                                        <option>05</option>
+                                                        <option>10</option>
+                                                        <option>15</option>
+                                                        <option>20</option>
+                                                        <option>25</option>
+                                                        <option>30</option>
+                                                        <option>35</option>
+                                                        <option>40</option>
+                                                        <option>45</option>
+                                                        <option>50</option>
+                                                        <option>55</option>
+                                                    </select>
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
+                                                        aria-hidden="true">
+                                                </div>
+                                                <div class="select-wrapper">
+                                                    <select id="tob-ampm" aria-label="AM or PM">
+                                                        <option value="AM">AM</option>
+                                                        <option value="PM">PM</option>
+                                                    </select>
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
+                                                        aria-hidden="true">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="location-section">
+                                            <label for="boy-location">Location</label>
+                                            <input type="text" id="boy-location" placeholder="Enter your Location">
+                                        </div>
+                                    </div>
+
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="no-time">
+                                        <label for="no-time">Don't know birth time.</label>
+                                    </div>
+                                </div>
+
+                                <div class="last-row">
+                                    <div class="form-group">
+                                        <label for="boy-type">Type *</label>
+                                        <div class="select-wrapper type-full">
+                                            <select id="boy-type" required>
+                                                <option value="">Select Type</option>
+                                            </select>
+                                            <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
+                                                aria-hidden="true">
+                                        </div>
+                                    </div>
+
+                                    <div class="button-wrapper">
+                                        <button type="submit" class="match-btn">Match Your Kundli</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+    </section>
+
+    <section class="kundli-analysis-section">
+        <div class="kundli-container">
+
+            <h2 class="kundli-main-title">Kundali Matching Analysis</h2>
+
+            <p class="kundli-description">
+                Got the Patrika Matching analysis, but not sure about what it means. Rest assured, connect with expert
+                Astrologers instantly over call or chat to ensure minute details about your compatibility and also
+                receive recommendations to fix any issues that might hinder in marital life.
+            </p>
+
+            <!-- Process Section -->
+            <h3 class="kundli-sub-title">
+                Online Kundali Matching Process (How it works?)
+            </h3>
+
+            <p class="kundli-sub-desc">
+                The process for Kundli Milan for marriage works as follows -
+            </p>
+
+            <div class="kundli-steps">
+                <p>Step 1: Enter the details of both partners, such as their name, birthdate,
+                    birthplace, and birth time. Make sure you enter the correct details for an accurate Janam Kundli
+                    matching.</p>
+
+                <p>Step 2: The system will generate a horoscope matching for marriage based on the
+                    details provided.</p>
+
+                <p>Step 3: Gun Milan by name and other birth-related details are analyzed for both
+                    potential partners by the software. The compatibility score is generated based on eight factors,
+                    namely Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, and Nadi.</p>
+
+                <p>Step 4: Based on the scores of each guna, the compatibility gets calculated. The
+                    higher the score, the higher the compatibility, and vice versa. However, other factors are also
+                    considered while analyzing, which can be done by expert Astrologers.</p>
+
+                <p>Step 5: The system then produces a detailed analysis concerning each factor and
+                    offers precautions or recommendations if required.</p>
+
+                <p>Step 6: It is recommended to consult expert Astrologers for further clarifications
+                    and insights.</p>
+            </div>
+
+            <!-- Benefits Section -->
+            <h3 class="kundli-sub-title">
+                Benefits of Online Kundali Matching or Online <br>Horoscope Matching
+            </h3>
+
+            <p class="benefits-sub-desc">
+                The online free kundali matching site provides the following benefits -
+            </p>
+
+            <div class="kundli-benefits">
+                <p>Check your compatibility anytime, anywhere! You no longer need to book an appointment with the
+                    Astrologers when you can do online kundali matching for marriage.</p>
+
+                <p>Online kundli matching for marriage helps you save a lot of time and effort, as you don’t need to
+                    travel to meet the Astrologers traditionally in person.</p>
+
+                <p>Various online Kundali matching apps offer personalized consultation services, too, and give clarity
+                    on compatibility concerns.</p>
+
+                <p>The online Janam Patrika milan can deliver results in no time, which can present a great help
+                    considering arranged marriages.</p>
+
+                <p>The free kundali matching presents a detailed analysis of all the compatibility factors, thus helping
+                    to make informed decisions.</p>
+
+                <p>Even the best kundali matching apps seem more affordable than the customary methods, thus making them
+                    accessible to a wide range of populations.</p>
+
+                <p>Lesser chances of errors as online free kundali matching uses algorithms established to eliminate
+                    human biases and provide transparency.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-title">Frequently Ask <span>Questions</span></h2>
+
+            <div class="faq-wrapper">
+                <div class="faq-column">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <h3>What Is Astrology?</h3>
+                            <img src="Images/up-arrow.svg" alt="Toggle" class="faq-icon-up">
+                        </div>
+                        <div class="faq-answer">
+                            <p>Astrology is the study of the influence of celestial objects, such as the Sun, Moon, and
+                                planets, on human lives. It examines the positions of these cosmic entities at the time
+                                of a person's birth to understand their personality education, and other life aspects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do Astrology predictions help me deal with my problems?</h3>
+                            <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are astrology predictions true?</h3>
+                            <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What type of questions can I ask an online astrologer?</h3>
+                            <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How can online astro consultation help in predicting future?</h3>
+                            <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do I need to provide my personal details for a consultation?</h3>
+                            <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How to Calculate Zodiac or Astrology Sign?</h3>
+                            <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Images/logo.svg" alt="AstroPeeth" class="footer-logo">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <span>Email us</span>
+                            <p>info@astropeeth.com</p>
+                        </div>
+                        <div class="info-divider"></div>
+                        <div class="info-item">
+                            <span>Call us</span>
+                            <p>+1 888-145-1025</p>
+                        </div>
+                    </div>
+                    <div class="address-info">
+                        <span>Address</span>
+                        <p>NX One, Tech Zone 4, B1405, B1403, Tower T3, Amrapali Dream Valley, Greater Noida, Uttar
+                            Pradesh 201309</p>
+                    </div>
+                    <div class="download-apps">
+                        <h3>Download AstroPeeth App</h3>
+                        <div class="app-buttons">
+                            <img src="Images/google-play.png" alt="Get it on Google Play">
+                            <img src="Images/app-store.png" alt="Download on the App Store">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h3>Sitemap</h3>
+                        <ul>
+                            <li><a href="#">Kundali</a></li>
+                            <li><a href="panchang.html">Panchang</a></li>
+                            <li><a href="puja.html">Puja</a></li>
+                            <li><a href="kundali matching.html">Kundli Matching</a></li>
+                            <li><a href="#">Horoscope</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Shipping and Return</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h2>Lets Talk!</h2>
+                    <p>We are always here to discuss your spiritual needs, enhance your devotional journey, and support
+                        your sacred traditions with our offerings.</p>
+                    <div class="social-icons">
+                        <img src="Images/fb.svg" alt="Facebook">
+                        <img src="Images/twitter.svg" alt="Twitter">
+                        <img src="Images/insta.svg" alt="Instagram">
+                        <img src="Images/linkdin.svg" alt="LinkedIn">
+                        <img src="Images/telegram.svg" alt="Telegram">
+                        <img src="Images/whatsapp.svg" alt="WhatsApp">
+                        <img src="Images/pinterest.svg" alt="Pinterest">
+                        <img src="Images/youtube.svg" alt="YouTube">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="footer-bottom">
+        <p>Copyright © 2026 astropeeth | Designed & developed by : Rirabh Consulting Services LLP</p>
+    </div>
+    <script>
+        const minuteSelect = document.getElementById("tob-mm");
+
+        for (let i = 0; i < 60; i++) {
+            let val = i.toString().padStart(2, '0'); // 01, 02, 03...
+            let option = document.createElement("option");
+
+            option.value = val;
+            option.textContent = val;
+
+            minuteSelect.appendChild(option);
+        }
+    </script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

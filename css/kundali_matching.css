@@ -1,0 +1,433 @@
+.strip-item.active span::after {
+    display: none;
+}
+/* ================= KUNDLI HERO ================= */
+.kundli-hero {
+    padding: 60px 0;
+    background: linear-gradient(111.75deg, #FFE2CB 0.68%, rgba(255, 180, 202, 0.51) 50.32%, #FFDDC1 99.97%);
+    overflow: hidden;
+}
+
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* ================= LEFT IMAGE ================= */
+.hero-image-box {
+    position: relative;
+    width: 100%;
+}
+
+.circle-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -35%);
+    width: 650px;
+    opacity: 1;
+    z-index: 1;
+}
+
+.couple-img {
+    position: absolute;
+    max-width: 840px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -42%);
+}
+
+/* ================= RIGHT CARD ================= */
+.hero-card-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.matchmaking-card {
+    width: 100%;
+    max-width: 500px;
+    background: #f6eeee;
+    padding: 38px ;
+    max-height: 450px;
+    border-radius: 18px;
+    box-shadow: 8px 8px 21.3px 0px rgba(9, 9, 9, 0.12);
+
+}
+
+/* ================= TITLE ================= */
+.card-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+/* ================= TABS ================= */
+.tab-header {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #555;
+    position: relative;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    color: rgba(246, 138, 50, 1);
+     font-weight: 600;
+}
+
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    left: -40px;
+    bottom: -1px;
+    width: 150%;
+    height: 2px;
+    background: rgba(246, 138, 50, 1);
+}
+
+/* ================= FORM ================= */
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: rgba(60, 60, 60, 1);
+    font-weight: 600;
+}
+
+input, select {
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 195, 140, 0.5);
+    font-size: 13px;
+    outline: none;
+    
+}
+/* ================= DATE INPUT ================= */
+.date-input-wrapper {
+    position: relative;
+}
+
+.icon-date {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+}
+
+.select-wrapper select {
+    width: 100%;
+    height: 38px;
+    padding: 0 25px 0 10px;
+    font-size: 13px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid rgba(255, 195, 140, 0.5);
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    color: rgba(147, 147, 147, 1);
+    outline: none;
+}
+
+.time-location-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.time-section {
+    display: flex;
+    flex-direction: column;
+}
+.time-inputs .select-wrapper {
+    width: 58px;
+}
+
+.time-inputs {
+    display: flex;
+    gap: 4px;
+}
+
+.location-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.time-section label, 
+.location-section label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 600;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 65px;
+}
+
+.select-wrapper select, 
+.location-section input {
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 195, 140, 0.5);
+    font-size: 12px;
+    outline: none;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.location-section input {
+    padding: 0 12px;
+}
+
+.select-wrapper select {
+    padding: 0 20px 0 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    pointer-events: none;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+    display: flex;
+  
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px; 
+    height: 14px;
+    min-width: 18px; 
+    border: 1px solid #851739;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+.checkbox-group input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    right: 5px;
+   
+    border: solid #851739;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  
+}
+.checkbox-group label {
+    font-size: 13px;
+    color: rgba(147, 147, 147, 1);
+    cursor: pointer;
+    font-weight: 400;
+}
+.last-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    width: 100%;
+     grid-column: 1 / -1;
+}
+
+.last-row > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.last-row .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.last-row .select-wrapper {
+    width: 100%;
+}
+
+.last-row .type-full {
+    width: 100%;
+    position: relative;
+}
+
+.last-row .type-full select {
+    width: 100%;
+    height: 48px;
+    padding: 0 40px 0 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 195, 140, 0.5);
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    background: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.last-row .type-full .arrow-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    pointer-events: none;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 48px;
+}
+
+.match-btn {
+    height: 48px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+   background: linear-gradient(180deg, #C33B65 0%, #851739 100%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.match-btn:active {
+    transform: scale(0.98);
+}
+
+/* ================= SECTION ================= */
+.kundli-analysis-section {
+  
+    padding: 20px 20px;
+}
+
+/* ================= CONTAINER ================= */
+.kundli-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+/* ================= MAIN TITLE ================= */
+.kundli-main-title {
+    font-size: 40px;
+    font-weight: 400;
+     color: rgba(10, 10, 10, 1);
+    margin-bottom: 12px;
+}
+
+/* ================= DESCRIPTION ================= */
+.kundli-description {
+    font-size: 18.5px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: rgba(79, 79, 79, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+/* ================= SUB TITLES ================= */
+.kundli-sub-title {
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  color: rgba(10, 10, 10, 1);
+}
+
+/* ================= SUB DESC ================= */
+.kundli-sub-desc {
+    font-size: 19px;
+    margin-bottom: 15px;
+    color: rgba(79, 79, 79, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+/* ================= STEPS ================= */
+.kundli-steps p {
+    font-size: 18.5px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: rgba(79, 79, 79, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+/* ================= BENEFITS ================= */
+.benefits-sub-desc {
+    font-size: 19px;
+    
+    margin-bottom: 35px;
+    color: rgba(79, 79, 79, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.kundli-benefits p {
+    font-size: 18.5px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: rgba(79, 79, 79, 1);
+}
+

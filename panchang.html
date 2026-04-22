@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/panchang.css">
+
+
+    <title>Astropeeth</title>
+</head>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="Images/logo.svg" alt="AstroPeeth Logo">
+        </div>
+
+        <div class="header-right">
+            <div class="header-item  phone desktop-only">
+                <img src="Images/phone.svg" alt="">
+                <span>Talk To Astrologer</span>
+            </div>
+
+            <div class="header-item talk-to-astro desktop-only">
+                <img src="Images/msg.svg" alt="">
+                <span>Talk To Astrologer</span>
+            </div>
+
+            <div class="header-item sign-in">
+                <img src="Images/user.svg" alt="">
+                <span>Sign In</span>
+            </div>
+
+            <div class="hamburger-menu" id="hamburger">
+                <img src="Images/hamburger.svg" alt="Menu">
+            </div>
+
+            <div class="language desktop-only">
+                <img src="Images/Language.svg" alt="">
+                <span>English</span>
+                <img src="Images/arrow-down.svg" class="arrow" alt="">
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <section class="top-strip">
+        <div class="container strip-container">
+
+            <div class="strip-item">
+
+                <span class="with-arrow">
+                    Kundali
+                    <img src="Images/arrow-down-red.svg" class="arrow" alt="">
+                </span>
+            </div>
+
+
+            <div class="strip-item active">
+
+                <span>Panchang</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Puja</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Reports</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Horoscope</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Shop</span>
+            </div>
+
+            <div class="strip-item">
+
+                <span>Blog</span>
+            </div>
+
+        </div>
+    </section>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ul class="breadcrumbs">
+                <li>
+                    <a href="index.html">Home</a>
+                    <img src="Images/arrow-right.svg" alt="arrow" class="breadcrumb-separator">
+                </li>
+                <li>
+                    <a href="kundali matching.html">kundali Matching</a>
+                    <img src="Images/arrow-right.svg" alt="arrow" class="breadcrumb-separator">
+                </li>
+                <li class="active">Panchang</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================= PANCHANG HERO SECTION ================= -->
+    <section class="kundli-hero panchang-page">
+        <div class="container">
+            <div class="hero-wrapper">
+
+                <div class="hero-image-box">
+                    <img src="Images/panch.png" alt="Panchang" class="panchang-bg" aria-hidden="true">
+                </div>
+
+                <div class="hero-card-box">
+
+                    <div class="panchang-card">
+                        <h2 class="card-title">Panchang</h2>
+
+                        <div class="tab-header">
+                            <button class="tab-btn active" onclick="showToday()">Today</button>
+                            <button class="tab-btn" onclick="showTomorrow()">Tomorrow</button>
+                            <button class="tab-btn" onclick="showCalendarTab()">Calendar</button>
+                        </div>
+
+                        <div id="compact-calendar" class="calendar-wrapper" style="display: none;">
+                            <div class="cal-nav-row">
+                                <div class="nav-left">
+                                    <button class="nav-btn" onclick="prevMonth()">&#10094;&#10094;</button>
+                                    <button class="nav-btn" onclick="prevMonth()">&#10094;</button>
+                                </div>
+                                <span class="cal-month-name">March 2026</span>
+                                <div class="nav-right">
+                                    <button class="nav-btn" onclick="nextMonth()">&#10095;</button>
+                                    <button class="nav-btn" onclick="nextMonth()">&#10095;&#10095;</button>
+                                </div>
+                            </div>
+                            <div class="compact-dates-grid">
+                                <div class="date">1</div>
+                                <div class="date">2</div>
+                                <div class="date">3</div>
+                                <div class="date">4</div>
+                                <div class="date">5</div>
+                                <div class="date">6</div>
+                                <div class="date">7</div>
+                                <div class="date">8</div>
+                                <div class="date">9</div>
+                                <div class="date">10</div>
+                                <div class="date">11</div>
+                                <div class="date">12</div>
+                                <div class="date">13</div>
+                                <div class="date">14</div>
+                                <div class="date">15</div>
+                                <div class="date">16</div>
+                                <div class="date">17</div>
+                                <div class="date">18</div>
+                                <div class="date">19</div>
+                                <div class="date">20</div>
+                                <div class="date">21</div>
+                                <div class="date">22</div>
+                                <div class="date">23</div>
+                                <div class="date">24</div>
+                                <div class="date">25</div>
+                                <div class="date">26</div>
+                                <div class="date">27</div>
+                                <div class="date">28</div>
+                                <div class="date active">29</div>
+                                <div class="date">30</div>
+                                <div class="date">31</div>
+                            </div>
+                        </div>
+
+                        <div id="panchang-content">
+                            <div class="panchang-section">
+                                <h3 class="panchang-subtitle">Panchang</h3>
+                                <div class="panchang-grid">
+                                    <div><span>Tithi</span>
+                                        <p>Chaturdasi</p>
+                                    </div>
+                                    <div><span>Nakshatra</span>
+                                        <p>Shatabhisha</p>
+                                    </div>
+                                    <div><span>Yoga</span>
+                                        <p>Sadhya</p>
+                                    </div>
+                                    <div><span>Karana</span>
+                                        <p>Vishti</p>
+                                    </div>
+                                    <div><span>Rasi</span>
+                                        <p>Aquarius</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panchang-section">
+                                <h3 class="panchang-subtitle">Additional Info</h3>
+                                <div class="panchang-info-row">
+                                    <div class="info-box">
+                                        <img src="Images/sunrise.png" alt="">
+                                        <div>
+                                            <p>Sunrise</p><span>06:33 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-box">
+                                        <img src="Images/sunset.png" alt="">
+                                        <div>
+                                            <p>Sunset</p><span>06:28 PM</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-box">
+                                        <img src="Images/moonrise.png" alt="">
+                                        <div>
+                                            <p>Moonrise</p><span>02:45 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-box">
+                                        <img src="Images/moonset.png" alt="">
+                                        <div>
+                                            <p>Moonset</p><span>12:53 PM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panchang-bottom">
+                                <div class="row"><span>Next Full Moon</span>
+                                    <p>Thu Apr 02 2026</p>
+                                </div>
+                                <div class="row"><span>Next New Moon</span>
+                                    <p>Thu Mar 19 2026</p>
+                                </div>
+                                <div class="row"><span>Amanta Month</span>
+                                    <p>Phalguna</p>
+                                </div>
+                                <div class="row"><span>Paksha</span>
+                                    <p>Krishna Paksha</p>
+                                </div>
+                                <div class="row"><span>Purnimanta</span>
+                                    <p>Chaitra</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="calendar-view" style="display: none;">
+                            <div class="calendar-header">
+                                <button class="cal-nav">&lt;</button>
+                                <span class="current-month">April 2026</span>
+                                <button class="cal-nav">&gt;</button>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="day-name">Sun</div>
+                                <div class="day-name">Mon</div>
+                                <div class="day-name">Tue</div>
+                                <div class="day-name">Wed</div>
+                                <div class="day-name">Thu</div>
+                                <div class="day-name">Fri</div>
+                                <div class="day-name">Sat</div>
+                                <div class="date empty"></div>
+                                <div class="date empty"></div>
+                                <div class="date">1</div>
+                                <div class="date">2</div>
+                                <div class="date">3</div>
+                                <div class="date">4</div>
+                                <div class="date">5</div>
+                                <div class="date">6</div>
+                                <div class="date">7</div>
+                                <div class="date">8</div>
+                                <div class="date active">9</div>
+                                <div class="date">10</div>
+                                <div class="date">11</div>
+                                <div class="date">12</div>
+                                <div class="date">13</div>
+                                <div class="date">14</div>
+                                <div class="date">15</div>
+                                <div class="date">16</div>
+                                <div class="date">17</div>
+                                <div class="date">18</div>
+                                <div class="date">19</div>
+                                <div class="date">20</div>
+                                <div class="date">21</div>
+                                <div class="date">22</div>
+                                <div class="date">23</div>
+                                <div class="date">24</div>
+                                <div class="date">25</div>
+                                <div class="date">26</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="panchang-content-info">
+        <div class="panchang-content-wrapper">
+
+            <div class="panchang-content-block">
+                <h1 class="panchang-content-title">Today Panchang</h1>
+                <p class="panchang-content-text">
+                    Panchang is the Hindu calendar followed by Vedic astrology, which provides complete detail on each
+                    day’s Tithis and auspicious and inauspicious timings. Today’s Panchang on Astroway is based on Vijay
+                    Vishva Panchang, which is the rarest of Panchang, used by Astrologers for hundreds of years. Through
+                    Daily Panchang, you can get all the information about the time, date, and day to determine the
+                    Muhurat for everything. Astrologers suggest people should follow the Day Panchang while doing new
+                    work or performing any auspicious event.
+                </p>
+            </div>
+
+            <div class="panchang-content-block">
+                <h2 class="panchang-content-subtitle">How is Panchang Today Calculated?</h2>
+                <p class="panchang-content-text">
+                    In Hindu culture, it is believed that starting a new task at the most productive time will result in
+                    positive outcomes. As a result, it is necessary to check for the appropriate time, which includes
+                    Nakshatras in favorable states, planetary movements in beneficial forms, etc.
+                </p>
+                <p class="panchang-content-text">
+                    Today Panchangam is an amalgam of all the factors that Astroyogi took into consideration when
+                    creating it.
+                </p>
+                <p class="panchang-content-text">
+                    Today's Panchang is a compilation of in-depth analyses of times and dates for a given day or a
+                    future day organized in a tabular format. The Nakshatras, or lunar mansions, provide astronomical
+                    data that supports the auspiciousness of these dates in addition to their astrological aspects.
+                </p>
+                <p class="panchang-content-text">
+                    The calculations are entirely based on the movements of planets and stars at a certain degree of
+                    measurement. The method of calculation involves determining the Moon's location within a specific
+                    Nakshatra of an individual's birth chart.
+                </p>
+                <p class="panchang-content-note">
+                    *Note: It's important to know that Panchang Muhurats might differ between two locations at the same
+                    time. For instance, despite having the same time and date chosen, Panchang Delhi and Panchang Mumbai
+                    may not be the same on a given day or year. There might be variations in Panchang at the same time,
+                    even within Indian states and cities or any location.
+                </p>
+            </div>
+
+            <div class="panchang-content-block">
+                <h2 class="panchang-content-subtitle">Why Should You Check Out the Auspicious Time Today?</h2>
+                <p class="panchang-content-text">
+                    Is today’s auspicious day in the Hindu calendar? Yes! The daily Panchang can be vital in helping you
+                    choose the right time, i.e., Shubh Muhurat or an auspicious time for performing rituals and
+                    conducting important work. People and expert astrologers rely on daily Panchang to determine
+                    auspicious timings for a myriad of religious and social events.
+                </p>
+                <p class="panchang-content-text">
+                    Whether you are looking to conduct a Naamkaran ceremony (ceremony for giving an appropriate name to
+                    your baby), perform a Griha Pravesh ceremony before moving into a new house or wedding nuptials, the
+                    daily Panchang can come up with an auspicious time today.
+
+                </p>
+                <p class="panchang-content-text">
+                    This is not limited to religious rituals like Pujas and Vrats (fasts) or spiritual events only; the
+                    daily Panchang can also offer you good timings today or the best timing for any day to purchase a
+                    car, begin a new job, or launch your business.
+                </p>
+                <p class="panchang-content-text">
+                    Following the auspicious timing as per the celestial alignment can help bring success and growth in
+                    all your endeavors, maintaining Shubh Muhurats can significantly impact your daily life.
+                </p>
+                <p class="panchang-content-text">
+                    However, have you ever wondered what makes a particular time or Muhurat auspicious?
+                </p>
+                <p class="panchang-content-text">
+                    Well, it's the complicated balance of multiple astrological factors. The Lunar day (Tithi),
+                    Nakshatra (constellation), the day of the week (Vara), Yoga (Luni-Solar day), Karana (half of a
+                    Lunar day), and the planetary periods (Dasha) are all vital for identifying the perfect timing for
+                    any event. For example, the Tithi can assist you in planning your spiritual events, as every Lunar
+                    day has its own energies. Moreover, the occasion or task is also considered, as the auspicious
+                    timing for a wedding will not be suitable for making an important business decision.
+                </p>
+                <p class="panchang-content-text">
+                    Whether it's a mundane everyday task or a noteworthy event, today's good times and bad times should
+                    be taken into consideration to enhance the success rate and positive impact of that event.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Images/logo.svg" alt="AstroPeeth" class="footer-logo">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <span>Email us</span>
+                            <p>info@astropeeth.com</p>
+                        </div>
+                        <div class="info-divider"></div>
+                        <div class="info-item">
+                            <span>Call us</span>
+                            <p>+1 888-145-1025</p>
+                        </div>
+                    </div>
+                    <div class="address-info">
+                        <span>Address</span>
+                        <p>NX One, Tech Zone 4, B1405, B1403, Tower T3, Amrapali Dream Valley, Greater Noida, Uttar
+                            Pradesh 201309</p>
+                    </div>
+                    <div class="download-apps">
+                        <h3>Download AstroPeeth App</h3>
+                        <div class="app-buttons">
+                            <img src="Images/google-play.png" alt="Get it on Google Play">
+                            <img src="Images/app-store.png" alt="Download on the App Store">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h3>Sitemap</h3>
+                        <ul>
+                            <li><a href="#">Kundali</a></li>
+                            <li><a href="panchang.html">Panchang</a></li>
+                            <li><a href="puja.html">Puja</a></li>
+                            <li><a href="kundali matching.html">Kundli Matching</a></li>
+                            <li><a href="#">Horoscope</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Shipping and Return</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h2>Lets Talk!</h2>
+                    <p>We are always here to discuss your spiritual needs, enhance your devotional journey, and support
+                        your sacred traditions with our offerings.</p>
+                    <div class="social-icons">
+                        <img src="Images/fb.svg" alt="Facebook">
+                        <img src="Images/twitter.svg" alt="Twitter">
+                        <img src="Images/insta.svg" alt="Instagram">
+                        <img src="Images/linkdin.svg" alt="LinkedIn">
+                        <img src="Images/telegram.svg" alt="Telegram">
+                        <img src="Images/whatsapp.svg" alt="WhatsApp">
+                        <img src="Images/pinterest.svg" alt="Pinterest">
+                        <img src="Images/youtube.svg" alt="YouTube">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="footer-bottom">
+        <p>Copyright © 2026 astropeeth | Designed & developed by : Rirabh Consulting Services LLP</p>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
