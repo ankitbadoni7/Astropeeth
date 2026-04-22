@@ -916,7 +916,7 @@ margin-top: 100px;
     font-weight: 500;
 }
 
-@media (min-width: 851px) and (max-width: 1240px) {
+@media (min-width: 850px) and (max-width: 1240px) {
 
 /* ================= PROFILE PAGE LAYOUT ================= */
 .profile-main {

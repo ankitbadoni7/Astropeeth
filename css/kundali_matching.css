@@ -552,3 +552,342 @@ input, select {
     font-weight: 400;
     font-family: var(--font-body);
 }
+
+@media (min-width:1001px) and (max-width:1200px){
+    .kundli-hero {
+    padding: 20px 0;
+}
+
+.hero-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(20px, 3vw, 50px);
+        padding: 0 30px;
+    }
+
+    .hero-card-box {
+        width: 45%;
+        flex-shrink: 1;
+    }
+
+    .hero-image-box {
+        width: 50%;
+        max-width: clamp(400px, 45vw, 550px);
+        aspect-ratio: 1 / 1;
+        margin: 0;
+    }
+
+    .couple-img {
+        width: 150%;
+        left: 20%;
+        transform: translateX(-40%) translateY(-30%);
+    }
+
+    .circle-bg {
+        width: 120%;
+         left: 20%;
+        transform: translateX(-30%) translateY(-25%);
+    }
+
+.matchmaking-card {
+    padding: 20px ;
+}
+.icon-date {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+}
+
+input[type="text"], 
+input[type="date"] {
+    width: 100%;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+    }
+    
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    /* ================= KUNDLI HERO ================= */
+.kundli-hero {
+    padding: 20px 0;
+}
+
+    .hero-wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0;
+        padding: 0 12px;
+    }
+
+    .hero-card-box, 
+    .hero-image-box {
+        width: 100%;
+      
+    }
+
+   .hero-image-box {
+    width: 100%;
+    max-width: clamp(300px, 60vw, 900px);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: -50px auto 0;
+}
+
+
+.couple-img {
+    width: 160%; 
+    max-width: none;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    display: block;
+    object-fit: contain;
+    left: -8%;
+    transform: translateX(-35%);
+    transform: translateY(-25%);
+}
+
+.circle-bg {
+    width: 120%;
+    height: auto;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+ .matchmaking-card {
+    width: 95%;
+    max-width: 500px;
+    
+    padding: clamp(20px, 5vw, 38px);
+    height: auto;
+    max-height: none;
+    margin: 0 auto;
+}
+
+.card-title {
+    font-size: clamp(20px, 4vw, 24px);
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tab-header {
+    display: flex;
+    gap: clamp(20px, 8vw, 60px);
+    margin-bottom: 25px;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding-bottom: 10px;
+    font-size: clamp(14px, 3vw, 16px);
+}
+
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+}
+
+.form-group.full-width {
+        grid-column: span 1;
+    }
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.time-location-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+.time-section, 
+.location-section {
+    display: contents;
+}
+
+.time-section > label,
+.location-section > label {
+    grid-column: 1 / -1;
+}
+
+.last-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.last-row > * {
+    flex: 1 1 180px;
+}
+
+input, select, .last-row .type-full select, .match-btn {
+    width: 100%;
+    font-size: clamp(12px, 2.5vw, 14px);
+}
+
+
+/* ================= MAIN TITLE ================= */
+.kundli-main-title {
+    font-size: 22px;
+}
+
+/* ================= DESCRIPTION ================= */
+.kundli-description {
+    font-size: 14px;
+    line-height: 1.2;
+   text-align: justify;
+}
+
+/* ================= SUB TITLES ================= */
+.kundli-sub-title {
+   font-size: 22px;
+}
+
+/* ================= SUB DESC ================= */
+.kundli-sub-desc {
+     font-size: 14px;
+    line-height: 1.2;
+  
+}
+
+/* ================= STEPS ================= */
+.kundli-steps p {
+    font-size: 14px;
+    line-height: 1.2;
+   text-align: justify;
+}
+
+/* ================= BENEFITS ================= */
+.benefits-sub-desc {
+    font-size: 14px;
+    line-height: 1.2;
+   
+}
+
+.kundli-benefits p {
+   font-size: 14px;
+    line-height: 1.2;
+   text-align: justify;
+}
+
+
+    .faq-wrapper {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 12px;
+    }
+
+    .faq-column {
+        width: 100%;
+    }
+    .faq-title{
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .faq-question h3 {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+   .faq-answer p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 2px;
+    }
+    .faq-icon, .faq-icon-up {
+        width: 28px;
+        height: 28px;
+        transform: translateX(5px);
+    }
+
+    .footer-section {
+        padding: 40px 20px;
+    }
+    .download-apps h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .app-buttons img {
+    height: 40px;
+    cursor: pointer;
+}
+    
+    .footer-section:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    
+    width: 350px;
+    height: 350px;
+}
+ .footer-section:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 850px;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    opacity: 0.09;
+}
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 10px;
+       
+    }
+    .app-buttons {
+        justify-content: center;
+    }
+
+.footer-links {
+    gap: 50px;
+    margin-top: 45px;
+}
+
+    .link-column ul li {
+    margin-bottom: 10px;
+}
+.link-column h3 {
+    font-size: 14px;}
+
+.link-column ul li a {
+    font-size: 12px;
+   
+}
+.footer-social {
+    margin-top: 20px;
+}
+}
