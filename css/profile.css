@@ -922,71 +922,18 @@ margin-top: 100px;
 .profile-main {
     padding: 20px 15px;
 }
-
-.hamburger-menu img {
-        transform: translateY(10px);
-    }
-
-.desktop-only  {
-        display: none;
-    }
-.phone{
-    display: block;
-    transform: translateY(10px)
+/* ================= RIGHT SECTION ================= */
+.header-right {
+    gap: 20px;
+    transform: translateX(0px);
 }
-.phone span{
-    display: none;
+
+/* ================= LANGUAGE BUTTON ================= */
+.language {
+
+    margin-right: 10px;
 }
-    .header-right {
-        gap: 15px;
-        transform: translateX(0);
-    }
 
-    .hamburger-menu {
-        display: block;
-    }
-
-    .sign-in span {
-        display: none; 
-    }
-    .sign-in{
-        transform: translateY(10px);
-    }
-    .top-strip {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #fff;
-        z-index: 1000;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-        .header{
-            padding: 5px ;
-}
-    .top-strip.active {
-        display: block;
-    }
-
-    .strip-container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 0;
-        gap: 0;
-    }
-
-    .strip-item {
-        width: 100%;
-        padding: 15px 20px;
-        border-bottom: 1px solid #f0f0f0;
-        justify-content: flex-start;
-    }
-
-    .strip-item.active span::after {
-        display: none;
-    }
 
 .breadcrumb-nav {
     padding: 15px 20px;

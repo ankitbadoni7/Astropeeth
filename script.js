@@ -1,3 +1,37 @@
+//Kundali Dropdown Menu Toggle Functionality
+document.getElementById('kundali-menu').addEventListener('click', function(e) {
+    e.stopPropagation();
+    const menu = this.querySelector('.dropdown-menu');
+    menu.classList.toggle('show');
+});
+
+document.addEventListener('click', function() {
+    const menu = document.querySelector('.dropdown-menu');
+    if (menu && menu.classList.contains('show')) {
+        menu.classList.remove('show');
+    }
+});
+
+
+/* Intersection Observer for Smooth Scroll Reveal */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        } else {
+            const rect = entry.boundingClientRect;
+            if (rect.top > window.innerHeight || rect.bottom < 0) {
+                entry.target.classList.remove('active');
+            }
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -10px 0px"
+});
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
 document.addEventListener("DOMContentLoaded", function() {
 
     // Mobile Navigation Toggle
