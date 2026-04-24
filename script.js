@@ -32,9 +32,93 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
+
+//Side Scroll - Testimonals
+const scrollContainer = document.getElementById('testimonialScroll');
+const dots = document.querySelectorAll('.dot');
+
+scrollContainer.addEventListener('scroll', () => {
+    const width = scrollContainer.offsetWidth;
+    const activeIndex = Math.round(scrollContainer.scrollLeft / width);
+
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+    });
+});
+
+////Side Scroll - Blog
+const blogScroll = document.getElementById('blogScroll');
+const blogDots = document.querySelectorAll('.blog-dot');
+
+let isScrolling;
+
+blogScroll.addEventListener('scroll', () => {
+    window.clearTimeout(isScrolling);
+
+    isScrolling = setTimeout(() => {
+        const width = blogScroll.getBoundingClientRect().width;
+        const index = Math.round(blogScroll.scrollLeft / width);
+
+        blogDots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }, 50);
+});
+
+//Faq Section
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const icon = question.querySelector('img');
+        
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+                const otherIcon = otherItem.querySelector('.faq-question img');
+                otherIcon.src = 'Images/down-arrow.svg';
+                otherIcon.className = 'faq-icon';
+            }
+        });
+
+        item.classList.toggle('active');
+        
+        if (item.classList.contains('active')) {
+            icon.src = 'Images/up-arrow.svg';
+            icon.className = 'faq-icon-up';
+        } else {
+            icon.src = 'Images/down-arrow.svg';
+            icon.className = 'faq-icon';
+        }
+    });
+});
+
+//talk to astro 
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (urlParams.get('scroll') === 'true') {
+        const targetSection = document.getElementById('filter-section');
+        
+        if (targetSection) {
+            setTimeout(() => {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300);
+        }
+    }
+});
+
+
+// Mobile Navigation Toggle
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Mobile Navigation Toggle
+    
     const hamburger = document.getElementById('hamburger');
     const topStrip = document.querySelector('.top-strip');
 
