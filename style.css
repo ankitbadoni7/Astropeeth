@@ -215,7 +215,7 @@ p {
 }
 
 .dropdown-menu {
-    display: none;
+    
     position: absolute;
     top: 100%;
     left: 50%;
@@ -232,7 +232,7 @@ p {
     transform: translateX(-50%) translateY(10px);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     pointer-events: none;
-    z-index: 11;
+    z-index: 999;
 }
 
 .dropdown-menu.show {
@@ -258,14 +258,7 @@ p {
     
 }
 
-.dropdown-menu a:hover {
-    background: #fdf0f3;
-    color: #8b1c3d;
-}
 
-.dropdown-menu.show {
-    display: block;
-}
 
 /* active underline only text */
 .strip-item.active span::after {
