@@ -1,4 +1,11 @@
-/* active underline only text */
+
+.only-chat-mode .icon-btn[title*="Start video call"],
+.only-chat-mode .icon-btn[title*="Start voice call"] {
+    display: none;
+}
+.only-call-mode .icon-btn[title*="Chat"] {
+    display: none;
+}
 .strip-item.active span::after {
     display: none;
 }
