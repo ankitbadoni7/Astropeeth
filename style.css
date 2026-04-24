@@ -14,11 +14,7 @@ html {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
 }
-.astro-card, section, header {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
+
 /* ================= FONT VARIABLES (ONLY) ================= */
 :root {
     --font-body: 'Inter', sans-serif;
