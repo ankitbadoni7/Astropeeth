@@ -115,6 +115,8 @@ window.addEventListener('load', () => {
     }
 });
 
+
+
 // translation
 
 const originalTexts = {};

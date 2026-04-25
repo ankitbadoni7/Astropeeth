@@ -839,6 +839,8 @@ p {
 }
 
 .view-all-btn {
+    display: inline-block;
+    text-decoration: none;
     margin-top: 40px;
     background: #8B1A42;
     color: #fff;
@@ -861,6 +863,7 @@ p {
     background: #721435;
     transform: translateY(-2px);
 }
+
 
 /* HOROSCOPE SECTION */
 
@@ -2493,15 +2496,15 @@ margin-top: 100px;
         border-bottom: 1px solid #f0f0f0;
         justify-content: flex-start;
     }
+.strip-item::after {
+   display: none;
+}
 
-    .strip-item.active span::after {
-        display: none;
-    }
+.strip-item:hover::after {
+  display: none;
+}
 
-    .strip-item.active {
-        background: #fff5ed;
-        border-left: 4px solid #8b1c3d;
-    }
+
 
     .hero {
         height: auto;
@@ -3235,9 +3238,15 @@ margin-top: 100px;
         justify-content: flex-start;
     }
 
-    .strip-item.active span::after {
-        display: none;
-    }
+.strip-item::after {
+   display: none;
+}
+
+.strip-item:hover::after {
+  display: none;
+}
+
+
     
 
     .hero {
@@ -3375,6 +3384,7 @@ margin-top: 100px;
         width: 100%;
         padding: 12px 0;
     }
+
     .astrologers-section
     {    padding: 40px 10px;}
 
