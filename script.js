@@ -2,9 +2,10 @@
 document.getElementById('kundali-menu').addEventListener('click', function(e) {
     e.stopPropagation();
     const menu = this.querySelector('.dropdown-menu');
-    menu.classList.toggle('show');
-});
 
+    menu.classList.toggle('show');
+    this.classList.toggle('active'); // 🔥 ye add karo
+});
 document.addEventListener('click', function() {
     const menu = document.querySelector('.dropdown-menu');
     if (menu && menu.classList.contains('show')) {
@@ -114,34 +115,67 @@ window.addEventListener('load', () => {
     }
 });
 
-//translation
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,hi,gu',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-    }, 'google_translate_element');
+// translation
+
+const originalTexts = {};
+
+// Save original English content
+function saveOriginalContent() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        originalTexts[key] = el.innerHTML;
+    });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const script = document.createElement('script');
-    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    document.body.appendChild(script);
+// Load language
+async function loadLanguage(lang) {
 
-    const langLinks = document.querySelectorAll('.lang-dropdown a');
-    langLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            const langCode = this.getAttribute('data-lang');
-            const selectField = document.querySelector(".goog-te-combo");
-            
-            if (selectField) {
-                selectField.value = langCode;
-                selectField.dispatchEvent(new Event('change'));
-                document.getElementById('current-lang').innerText = this.innerText;
+    // Agar English select hua → original restore
+    if (lang === "en") {
+        document.querySelectorAll("[data-key]").forEach(el => {
+            const key = el.getAttribute("data-key");
+            if (originalTexts[key]) {
+                el.innerHTML = originalTexts[key];
             }
         });
+
+        document.getElementById("current-lang").innerText = "English";
+        localStorage.setItem("lang", "en");
+        return;
+    }
+
+    // JSON load
+    const res = await fetch(`lang/${lang}.json`);
+    const data = await res.json();
+
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (data[key]) {
+            el.innerText = data[key];
+        }
     });
+
+    document.getElementById("current-lang").innerText =
+        lang === "hi" ? "Hindi" : "Gujarati";
+
+    localStorage.setItem("lang", lang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    saveOriginalContent(); // 🔥 important
+
+    const savedLang = localStorage.getItem("lang") || "en";
+    loadLanguage(savedLang);
+
+    document.querySelectorAll(".lang-dropdown a").forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute("data-lang");
+            loadLanguage(lang);
+        });
+    });
+
 });
 
 // Mobile Navigation Toggle

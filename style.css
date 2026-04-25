@@ -198,7 +198,7 @@ p {
     
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     pointer-events: none;
-    z-index:11;
+
 }
 
 .language:hover .lang-dropdown {
@@ -211,7 +211,7 @@ p {
 
 .lang-dropdown a {
     display: block;
-    padding: 12px 16px;
+    padding: 8px 16px;
     color: #333;
     text-decoration: none;
     font-size: 14px;
@@ -224,11 +224,7 @@ p {
     color: #8b1c3d;
 }
 
-#google_translate_element, 
-.goog-te-banner-frame, 
-.skiptranslate {
-    display: none;
-}
+
 
 
 /* ================= TOP STRIP ================= */
@@ -245,6 +241,13 @@ p {
 
 .with-arrow .arrow {
     width: 15px;
+}
+#kundali-menu .arrow {
+    transition: transform 0.3s ease;
+}
+
+#kundali-menu.active .arrow {
+    transform: rotate(180deg);
 }
 
 /* container same alignment */
