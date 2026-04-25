@@ -114,6 +114,35 @@ window.addEventListener('load', () => {
     }
 });
 
+//translation
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,gu',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(script);
+
+    const langLinks = document.querySelectorAll('.lang-dropdown a');
+    langLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const langCode = this.getAttribute('data-lang');
+            const selectField = document.querySelector(".goog-te-combo");
+            
+            if (selectField) {
+                selectField.value = langCode;
+                selectField.dispatchEvent(new Event('change'));
+                document.getElementById('current-lang').innerText = this.innerText;
+            }
+        });
+    });
+});
 
 // Mobile Navigation Toggle
 document.addEventListener("DOMContentLoaded", function() {

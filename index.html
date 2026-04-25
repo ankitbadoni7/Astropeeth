@@ -24,30 +24,40 @@
         </div>
 
         <div class="header-right">
-    <a href="report.html?mode=call#filter-section" class="header-item phone desktop-only">
-        <img src="Images/phone.svg" alt="">
-        <span>Talk To Astrologer</span>
-    </a>
+            <a href="report.html?mode=call#filter-section" class="header-item phone desktop-only">
+                <img src="Images/phone.svg" alt="">
+                <span>Talk To Astrologer</span>
+            </a>
 
-    <a href="report.html?mode=chat#filter-section" class="header-item talk-to-astro desktop-only">
-        <img src="Images/msg.svg" alt="">
-        <span>Talk To Astrologer</span>
-    </a>
+            <a href="report.html?mode=chat#filter-section" class="header-item talk-to-astro desktop-only">
+                <img src="Images/msg.svg" alt="">
+                <span>Talk To Astrologer</span>
+            </a>
 
-    <div class="header-item sign-in">
-        <img src="Images/user.svg" alt="">
-        <span>Sign In</span>
-    </div>
+            <div class="header-item sign-in">
+                <img src="Images/user.svg" alt="">
+                <span>Sign In</span>
+            </div>
 
-    <div class="language desktop-only">
-        <img src="Images/Language.svg" alt="">
-        <span>English</span>
-        <img src="Images/arrow-down.svg" class="arrow" alt="">
-    </div>
-    <div class="hamburger-menu" id="hamburger">
-        <img src="Images/hamburger.svg" alt="Menu">
-    </div>
-</div>
+            <div class="language desktop-only" id="lang-switcher">
+                <img src="Images/Language.svg" alt="">
+                <span id="current-lang">English</span>
+                <img src="Images/arrow-down.svg" class="arrow" alt="">
+
+                <div class="lang-dropdown">
+                    <a href="javascript:void(0)" data-lang="en">English</a>
+                    <a href="javascript:void(0)" data-lang="hi">Hindi</a>
+                    <a href="javascript:void(0)" data-lang="gu">Gujarati</a>
+                </div>
+            </div>
+
+
+            <div id="google_translate_element"></div>
+
+            <div class="hamburger-menu" id="hamburger">
+                <img src="Images/hamburger.svg" alt="Menu">
+            </div>
+        </div>
 
     </div>
 </header>
@@ -94,7 +104,7 @@
                 <span>Shop</span>
             </div>
 
-            <div class="strip-item">
+            <div class="strip-item blogy">
                 <img src="Images/blog.svg" alt="">
                 <span>Blog</span>
             </div>
@@ -238,24 +248,24 @@
                                 </div>
                             </div>
                         </div>
-                    
-                    <div class="astro-bottom">
-                        <div class="price-info">
-                            <p class="exp">Exp: <span class="year">15 Years</span> </p>
-                            <p class="rate">₹ 28/<span class="min">min</span></p>
+
+                        <div class="astro-bottom">
+                            <div class="price-info">
+                                <p class="exp">Exp: <span class="year">15 Years</span> </p>
+                                <p class="rate">₹ 28/<span class="min">min</span></p>
+                            </div>
+                            <div class="action-icons">
+                                <button class="icon-btn" title="Chat with astrologer">
+                                    <img src="Images/msg_white.svg" alt="Chat icon">
+                                </button>
+                                <button class="icon-btn" title="Start video call">
+                                    <img src="Images/vid.svg" alt="Video call icon">
+                                </button>
+                                <button class="icon-btn" title="Start voice call">
+                                    <img src="Images/voice.svg" alt="Voice call icon">
+                                </button>
+                            </div>
                         </div>
-                        <div class="action-icons">
-                            <button class="icon-btn" title="Chat with astrologer">
-                                <img src="Images/msg_white.svg" alt="Chat icon">
-                            </button>
-                            <button class="icon-btn" title="Start video call">
-                                <img src="Images/vid.svg" alt="Video call icon">
-                            </button>
-                            <button class="icon-btn" title="Start voice call">
-                                <img src="Images/voice.svg" alt="Voice call icon">
-                            </button>
-                        </div>
-                    </div>
                     </a>
                 </div>
 
