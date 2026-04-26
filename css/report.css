@@ -1262,7 +1262,7 @@ margin-top: 100px;
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:810px) {
      
 .hamburger-menu img {
         transform: translateY(10px);
@@ -1407,20 +1407,19 @@ margin-top: 100px;
         font-size: 18px;
     }
 
-    .action-icons {
-        justify-content: center;
-        width: 100%;
-    }
+   
 
-    .icon-btn {
-        width: 35px;
-        height: 35px;
-    }
-
-    .icon-btn img {
-        width: 22px;
-        height: 22px;
-    }
+    
+.get-report-btn {
+    
+        width:80%;
+    padding: 10px 10px;
+  
+    font-size: 10px;
+    
+}
+   
+   
 body {
         display: flex;
         flex-direction: column;
