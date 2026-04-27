@@ -676,6 +676,7 @@ p {
     white-space: nowrap;
     margin-right: auto;
 }
+
 #sort-filter:hover, #member-filter:hover {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     transition: all 0.25s ease;
@@ -687,20 +688,32 @@ p {
     gap: 15px;
 }
 
-.dropdown-trigger {
+#report-sort-filter:hover,
+#report-member-filter:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.25s ease;
+}
+
+.report-filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.report-dropdown-trigger {
     position: relative;
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
-.dropdown-trigger:hover {
+.report-dropdown-trigger:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.dropdown-menu {
+.report-dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 10;
+    left: 10px;
     background: white;
     min-width: 180px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
@@ -711,11 +724,11 @@ p {
     z-index: 999;
 }
 
-.dropdown-menu.show {
+.report-dropdown-menu.show {
     display: block;
 }
 
-.dropdown-menu a {
+.report-dropdown-menu a {
     display: block;
     padding: 12px 20px;
     color: #333;
@@ -725,11 +738,10 @@ p {
     transition: background 0.2s ease;
 }
 
-.dropdown-menu a:hover {
+.report-dropdown-menu a:hover {
     background: #fff5f7;
     color: #8b1c3d;
 }
-
 
 
 
@@ -786,7 +798,7 @@ p {
 }
 
 /* Clear Button */
-.clear-btn {
+.report-clear-btn {
    background: linear-gradient(180deg, #C33B65 0%, #851739 100%);
     color: #fff;
     border: none;
@@ -802,7 +814,7 @@ p {
     font-family: var(--font-para);
 }
 
-.clear-btn img {
+.report-clear-btn img {
     width: 18px;
 }
 
