@@ -33,17 +33,7 @@ html {
     font-weight: 300;
 }
 
-@font-face {
-    font-family: 'Stolzl';
-    src: url('Fonts/stolzl_light.woff2') format('woff2');
-    font-weight: 300;
-}
 
-@font-face {
-    font-family: 'Stolzl';
-    src: url('Fonts/stolzl_book.woff2') format('woff2');
-    font-weight: 350;
-}
 
 @font-face {
     font-family: 'Stolzl';
@@ -57,11 +47,6 @@ html {
     font-weight: 500;
 }
 
-@font-face {
-    font-family: 'Stolzl';
-    src: url('Fonts/stolzl_bold.woff2') format('woff2');
-    font-weight: 700;
-}
 .reveal {
     opacity: 0;
     transform: perspective(1000px) rotateX(-15deg) translateY(50px) scale(0.92);
