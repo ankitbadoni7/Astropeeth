@@ -1254,6 +1254,8 @@ margin-top: 100px;
     .sign-in{
         transform: translateY(10px);
     }
+
+     
     .top-strip {
         display: none;
         position: absolute;
@@ -1286,9 +1288,25 @@ margin-top: 100px;
         justify-content: flex-start;
     }
 
-    .strip-item.active span::after {
-        display: none;
+   .strip-item::after {
+   display: none;
+}
+
+.strip-item:hover::after {
+  display: none;
+}
+
+.dropdown-menu {
+        left: 15px;
+        transform: translateY(10px);
+        min-width: 180px;
+        width: max-content;
     }
+
+    .dropdown-menu.show {
+        transform: translateY(0);
+    }
+
 
 .breadcrumb-nav {
     padding: 15px 20px;

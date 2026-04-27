@@ -64,33 +64,37 @@
     <section class="top-strip">
         <div class="container strip-container">
 
-            <div class="strip-item">
+            <div class="strip-item" id="kundali-menu">
 
                 <span class="with-arrow">
-                    Kundali
+                    <span data-key="kundali">Kundali</span>
                     <img src="Images/arrow-down-red.svg" class="arrow" alt="">
                 </span>
+
+                <div class="dropdown-menu">
+                    <a href="kundali matching.html" data-key="kundali_matching">Kundali Matching</a>
+                    <a href="janam kundali.html" data-key="janam_kundali">Janam Kundali</a>
+                </div>
             </div>
 
+            <a href="panchang.html" class="strip-item">
 
-            <div class="strip-item active">
+                <span data-key="panchang">Panchang</span>
+            </a>
 
-                <span>Panchang</span>
-            </div>
+            <a href="puja.html" class="strip-item">
+
+                <span data-key="puja">Puja</span>
+            </a>
+
+            <a href="report.html" class="strip-item">
+
+                <span data-key="reports">Reports</span>
+            </a>
 
             <div class="strip-item">
 
-                <span>Puja</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Reports</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Horoscope</span>
+                <span data-key="horoscope">Horoscope</span>
             </div>
 
             <a href="shop.html" class="strip-item">
@@ -98,9 +102,9 @@
                 <span data-key="shop">Shop</span>
             </a>
 
-            <div class="strip-item">
+            <div class="strip-item blogy">
 
-                <span>Blog</span>
+                <span data-key="blog">Blog</span>
             </div>
 
         </div>
