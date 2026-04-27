@@ -211,3 +211,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+
+//filter controls
+document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const menu = this.querySelector('.dropdown-menu');
+        
+        document.querySelectorAll('.dropdown-menu').forEach(m => {
+            if (m !== menu) m.classList.remove('show');
+        });
+
+        if (menu) {
+            menu.classList.toggle('show');
+        }
+    });
+});
+
+document.querySelectorAll('.dropdown-menu a').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const text = this.innerText;
+        const trigger = this.closest('.dropdown-trigger');
+        if (trigger) {
+            const span = trigger.querySelector('span');
+            if (span) span.innerText = text;
+        }
+    });
+});
+
+window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.remove('show');
+    });
+});
+
+const clearBtn = document.querySelector('.clear-btn');
+if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+        const searchInput = document.querySelector('.search-box input');
+        if (searchInput) searchInput.value = '';
+        
+        const sortSpan = document.querySelector('#sort-filter span');
+        if (sortSpan) sortSpan.innerText = 'Sort filters';
+        
+        const memberSpan = document.querySelector('#member-filter span');
+        if (memberSpan) memberSpan.innerText = 'Select team member';
+    });
+}

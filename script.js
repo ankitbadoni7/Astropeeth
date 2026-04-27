@@ -134,62 +134,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ================= TRANSLATION =================
-    const originalTexts = {};
+const originalTexts = {};
 
-    function saveOriginalContent() {
-        document.querySelectorAll("[data-key]").forEach(el => {
+function saveOriginalContent() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        originalTexts[key] = el.innerHTML;
+    });
+}
+
+async function loadLanguage(lang) {
+
+    const elements = document.querySelectorAll("[data-key]");
+
+    if (lang === "en") {
+        elements.forEach(el => {
             const key = el.getAttribute("data-key");
-            originalTexts[key] = el.innerHTML;
-        });
-    }
-
-    async function loadLanguage(lang) {
-
-        if (lang === "en") {
-            document.querySelectorAll("[data-key]").forEach(el => {
-                const key = el.getAttribute("data-key");
-                if (originalTexts[key]) {
-                    el.innerHTML = originalTexts[key];
-                }
-            });
-
-            const currentLang = document.getElementById("current-lang");
-            if (currentLang) currentLang.innerText = "English";
-
-            localStorage.setItem("lang", "en");
-            return;
-        }
-
-        const res = await fetch(`lang/${lang}.json`);
-        const data = await res.json();
-
-        document.querySelectorAll("[data-key]").forEach(el => {
-            const key = el.getAttribute("data-key");
-            if (data[key]) {
-                el.innerText = data[key];
+            if (originalTexts[key]) {
+                el.innerHTML = originalTexts[key];
             }
         });
 
         const currentLang = document.getElementById("current-lang");
-        if (currentLang) {
-            currentLang.innerText = lang === "hi" ? "Hindi" : "Gujarati";
-        }
+        if (currentLang) currentLang.innerText = "English";
 
-        localStorage.setItem("lang", lang);
+        localStorage.setItem("lang", "en");
+        return;
     }
 
-    saveOriginalContent();
+    const res = await fetch(`lang/${lang}.json`);
+    const data = await res.json();
 
-    const savedLang = localStorage.getItem("lang") || "en";
-    loadLanguage(savedLang);
+    elements.forEach(el => {
+        const key = el.getAttribute("data-key");
 
-    document.querySelectorAll(".lang-dropdown a").forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute("data-lang");
-            loadLanguage(lang);
-        });
+        if (!data[key]) return;
+
+        
+        const original = originalTexts[key];
+
+        if (original && original.includes("<")) {
+            el.innerHTML = data[key];
+        } else {
+            el.textContent = data[key];
+        }
     });
+
+    const currentLang = document.getElementById("current-lang");
+    if (currentLang) {
+        currentLang.innerText = lang === "hi" ? "Hindi" : "Gujarati";
+    }
+
+    localStorage.setItem("lang", lang);
+}
+
+saveOriginalContent();
+
+const savedLang = localStorage.getItem("lang") || "en";
+loadLanguage(savedLang);
+
+document.querySelectorAll(".lang-dropdown a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const lang = this.getAttribute("data-lang");
+        loadLanguage(lang);
+    });
+});
 
     // ================= MOBILE NAV =================
     const hamburger = document.getElementById('hamburger');

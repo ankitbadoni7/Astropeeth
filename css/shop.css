@@ -544,6 +544,7 @@ p {
     font-weight: 500;
     font-family: var(--font-body);
 }
+
 .product-filter {
     display: flex;
     justify-content: flex-end;

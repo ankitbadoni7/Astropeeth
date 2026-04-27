@@ -165,14 +165,25 @@
                         <img src="Images/search.svg" alt="search">
                     </div>
 
-                    <div class="filter-box">
+                    <div class="filter-box dropdown-trigger" id="sort-filter">
                         <img src="Images/filters.svg" alt="filter">
                         <span>Sort filters</span>
+                        <div class="dropdown-menu">
+                            <a href="#" data-sort="low-exp">Low Experience</a>
+                            <a href="#" data-sort="high-exp">High Experience</a>
+                            <a href="#" data-sort="low-price">Lowest Price</a>
+                            <a href="#" data-sort="high-price">Highest Price</a>
+                        </div>
                     </div>
 
-                    <div class="select-box">
+                    <div class="select-box dropdown-trigger" id="member-filter">
                         <span>Select team member</span>
                         <img src="Images/down-arrow-red.svg" alt="arrow">
+                        <div class="dropdown-menu">
+                            <a href="#">Member 1</a>
+                            <a href="#">Member 2</a>
+                            <a href="#">Member 3</a>
+                        </div>
                     </div>
 
                     <button class="clear-btn">

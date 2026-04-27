@@ -676,6 +676,10 @@ p {
     white-space: nowrap;
     margin-right: auto;
 }
+#sort-filter:hover, #member-filter:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.25s ease;
+}
 
 .filter-controls {
     display: flex;
@@ -683,7 +687,52 @@ p {
     gap: 15px;
 }
 
-/* Common Box Style */
+.dropdown-trigger {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.dropdown-trigger:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 10;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 5px 0;
+    display: none;
+    z-index: 999;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: #fff5f7;
+    color: #8b1c3d;
+}
+
+
+
+
 .search-box, .filter-box, .select-box {
     border: 2px solid rgba(255, 195, 140, 0.68);    border-radius: 8px;
     padding: 4px 10px;
