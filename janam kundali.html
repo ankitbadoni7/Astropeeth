@@ -11,10 +11,6 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    
-  
     <link rel="stylesheet" href="css/janam_kundali.css">
     <title>Astropeeth</title>
 </head>
@@ -22,35 +18,44 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <img src="Images/logo.svg" alt="AstroPeeth Logo">
+            <a href="index.html">
+                <img src="Images/logo.svg" alt="AstroPeeth Logo">
+            </a>
         </div>
 
         <div class="header-right">
-            <div class="header-item  phone desktop-only">
+            <a href="report.html?mode=call#filter-section" class="header-item phone desktop-only">
                 <img src="Images/phone.svg" alt="">
-                <span>Talk To Astrologer</span>
-            </div>
+                <span data-key="talk_call">Talk To Astrologer</span>
+            </a>
 
-            <div class="header-item talk-to-astro desktop-only">
+            <a href="report.html?mode=chat#filter-section" class="header-item talk-to-astro desktop-only">
                 <img src="Images/msg.svg" alt="">
-                <span>Talk To Astrologer</span>
-            </div>
+                <span data-key="talk_chat">Chat With Astrologer</span>
+            </a>
 
             <div class="header-item sign-in">
                 <img src="Images/user.svg" alt="">
-                <span>Sign In</span>
+                <span data-key="sign_in">Sign In</span>
+            </div>
+
+            <div class="language desktop-only" id="lang-switcher">
+                <img src="Images/Language.svg" alt="">
+                <span id="current-lang" data-key="lang_current">English</span>
+                <img src="Images/arrow-down.svg" class="arrow" alt="">
+
+                <div class="lang-dropdown">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">Hindi</a>
+                    <a href="#" data-lang="guj">Gujarati</a>
+                </div>
             </div>
 
             <div class="hamburger-menu" id="hamburger">
                 <img src="Images/hamburger.svg" alt="Menu">
             </div>
-
-            <div class="language desktop-only">
-                <img src="Images/Language.svg" alt="">
-                <span>English</span>
-                <img src="Images/arrow-down.svg" class="arrow" alt="">
-            </div>
         </div>
+
     </div>
 </header>
 
@@ -58,47 +63,52 @@
     <section class="top-strip">
         <div class="container strip-container">
 
-            <div class="strip-item">
+            <div class="strip-item" id="kundali-menu">
 
                 <span class="with-arrow">
-                    Kundali
+                    <span data-key="kundali">Kundali</span>
                     <img src="Images/arrow-down-red.svg" class="arrow" alt="">
                 </span>
+
+                <div class="dropdown-menu">
+                    <a href="kundali matching.html" data-key="kundali_matching">Kundali Matching</a>
+                    <a href="janam kundali.html" data-key="janam_kundali">Janam Kundali</a>
+                </div>
             </div>
 
+            <a href="panchang.html" class="strip-item">
 
-            <div class="strip-item active">
+                <span data-key="panchang">Panchang</span>
+            </a>
 
-                <span>Panchang</span>
+            <a href="puja.html" class="strip-item">
+
+                <span data-key="puja">Puja</span>
+            </a>
+
+            <a href="report.html" class="strip-item">
+
+                <span data-key="reports">Reports</span>
+            </a>
+
+            <div class="strip-item">
+
+                <span data-key="horoscope">Horoscope</span>
             </div>
 
             <div class="strip-item">
 
-                <span>Puja</span>
+                <span data-key="shop">Shop</span>
             </div>
 
-            <div class="strip-item">
+            <div class="strip-item blogy">
 
-                <span>Reports</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Horoscope</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Shop</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Blog</span>
+                <span data-key="blog">Blog</span>
             </div>
 
         </div>
     </section>
+
     <nav class="breadcrumb-nav">
         <div class="container">
             <ul class="breadcrumbs">
@@ -343,7 +353,7 @@
 
 
 
-  
+
     <footer class="footer-section">
         <div class="footer-container">
             <div class="footer-content">
@@ -416,23 +426,60 @@
             </div>
         </div>
     </footer>
-    
+
     <div class="footer-bottom">
         <p>Copyright © 2026 astropeeth | Designed & developed by : Rirabh Consulting Services LLP</p>
     </div>
-    <script>
-        const minuteSelect = document.getElementById("tob-mm");
 
-        for (let i = 0; i < 60; i++) {
-            let val = i.toString().padStart(2, '0'); // 01, 02, 03...
-            let option = document.createElement("option");
+    <!-- SIGN IN MODAL -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-box">
 
-            option.value = val;
-            option.textContent = val;
+            <!-- CLOSE BUTTON -->
+            <span class="modal-close" id="closeModal">&times;</span>
 
-            minuteSelect.appendChild(option);
-        }
-    </script>
+            <!-- TOP SECTION -->
+            <div class="modal-header">
+                <h2>Get Consultation from Experts</h2>
+                <p class="highlight">First Chat Free</p>
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+
+                <h3>Sign In</h3>
+                <p class="subtitle">Enter your mobile number to continue</p>
+
+                <div class="input-box">
+                    <span>+91</span>
+                    <input type="tel" id="mobileInput" placeholder="Enter Mobile Number" maxlength="10"
+                        inputmode="numeric" pattern="[0-9]*">
+                </div>
+
+                <button class="otp-btn">Send OTP</button>
+
+                <button class="email-btn">
+                    Continue with Email
+                </button>
+
+                <p class="terms">
+                    By signing in, you agree to our <span>Terms</span> & <span>Privacy Policy</span>
+                </p>
+
+                <div class="app-links">
+                    <p>Download Our App</p>
+                    <div class="stores">
+                        <img src="Images/google-play.png" alt="">
+                        <img src="Images/app-store.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+   
+
     <script src="script.js" defer></script>
 </body>
 

@@ -11,46 +11,52 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-         <link rel="stylesheet" href="css/kundali_matching.css">
-         <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/janam_kundali.css">
+    <link rel="stylesheet" href="css/kundali_matching.css">
     <title>Astropeeth</title>
 </head>
 
 <header class="header">
     <div class="container">
         <div class="logo">
-            <img src="Images/logo.svg" alt="AstroPeeth Logo">
+            <a href="index.html">
+                <img src="Images/logo.svg" alt="AstroPeeth Logo">
+            </a>
         </div>
 
         <div class="header-right">
-            <div class="header-item  phone desktop-only">
+            <a href="report.html?mode=call#filter-section" class="header-item phone desktop-only">
                 <img src="Images/phone.svg" alt="">
-                <span>Talk To Astrologer</span>
-            </div>
+                <span data-key="talk_call">Talk To Astrologer</span>
+            </a>
 
-            <div class="header-item talk-to-astro desktop-only">
+            <a href="report.html?mode=chat#filter-section" class="header-item talk-to-astro desktop-only">
                 <img src="Images/msg.svg" alt="">
-                <span>Talk To Astrologer</span>
-            </div>
+                <span data-key="talk_chat">Chat With Astrologer</span>
+            </a>
 
             <div class="header-item sign-in">
                 <img src="Images/user.svg" alt="">
-                <span>Sign In</span>
+                <span data-key="sign_in">Sign In</span>
+            </div>
+
+            <div class="language desktop-only" id="lang-switcher">
+                <img src="Images/Language.svg" alt="">
+                <span id="current-lang" data-key="lang_current">English</span>
+                <img src="Images/arrow-down.svg" class="arrow" alt="">
+
+                <div class="lang-dropdown">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">Hindi</a>
+                    <a href="#" data-lang="guj">Gujarati</a>
+                </div>
             </div>
 
             <div class="hamburger-menu" id="hamburger">
                 <img src="Images/hamburger.svg" alt="Menu">
             </div>
-
-            <div class="language desktop-only">
-                <img src="Images/Language.svg" alt="">
-                <span>English</span>
-                <img src="Images/arrow-down.svg" class="arrow" alt="">
-            </div>
         </div>
+
     </div>
 </header>
 
@@ -58,43 +64,47 @@
     <section class="top-strip">
         <div class="container strip-container">
 
-            <div class="strip-item">
+            <div class="strip-item" id="kundali-menu">
 
                 <span class="with-arrow">
-                    Kundali
+                    <span data-key="kundali">Kundali</span>
                     <img src="Images/arrow-down-red.svg" class="arrow" alt="">
                 </span>
+
+                <div class="dropdown-menu">
+                    <a href="kundali matching.html" data-key="kundali_matching">Kundali Matching</a>
+                    <a href="janam kundali.html" data-key="janam_kundali">Janam Kundali</a>
+                </div>
             </div>
 
+            <a href="panchang.html" class="strip-item">
 
-            <div class="strip-item active">
+                <span data-key="panchang">Panchang</span>
+            </a>
 
-                <span>Panchang</span>
+            <a href="puja.html" class="strip-item">
+
+                <span data-key="puja">Puja</span>
+            </a>
+
+            <a href="report.html" class="strip-item">
+
+                <span data-key="reports">Reports</span>
+            </a>
+
+            <div class="strip-item">
+
+                <span data-key="horoscope">Horoscope</span>
             </div>
 
             <div class="strip-item">
 
-                <span>Puja</span>
+                <span data-key="shop">Shop</span>
             </div>
 
-            <div class="strip-item">
+            <div class="strip-item blogy">
 
-                <span>Reports</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Horoscope</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Shop</span>
-            </div>
-
-            <div class="strip-item">
-
-                <span>Blog</span>
+                <span data-key="blog">Blog</span>
             </div>
 
         </div>
@@ -126,32 +136,41 @@
                         <h2 class="card-title">Kundli Matchmaking</h2>
 
                         <div class="tab-header" role="tablist">
-                            <button class="tab-btn active" role="tab" aria-selected="true">Enter Boy's Details</button>
-                            <button class="tab-btn" role="tab" aria-selected="false">Enter Girl's Details</button>
+                            <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="boy">
+                                Enter Boy's Details
+                            </button>
+                            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="girl">
+                                Enter Girl's Details
+                            </button>
                         </div>
 
-                        <form class="match-form">
+                        <!-- ================= BOY FORM ================= -->
+                        <form class="match-form tab-content active" id="boy-form">
                             <div class="input-grid">
+
                                 <div class="form-group">
                                     <label for="boy-name">Full Name</label>
-                                    <input type="text" id="boy-name" placeholder="Enter your Full Name">
+                                    <input type="text" id="boy-name" placeholder="Enter Boy's Full Name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="boy-dob">Date of Birth</label>
                                     <div class="date-input-wrapper">
                                         <input type="text" id="boy-dob" placeholder="Enter your Date of Birth">
-                                        <img src="Images/date.svg" class="icon-date" alt="" aria-hidden="true">
+                                        <img src="Images/date.svg" class="icon-date" alt="Select date">
                                     </div>
                                 </div>
 
                                 <div class="form-group full-width">
                                     <div class="time-location-row">
+
                                         <div class="time-section">
-                                            <label id="tob-label">Time of Birth</label>
-                                            <div class="time-inputs" role="group" aria-labelledby="tob-label">
+                                            <label id="boy-time-label">Time of Birth</label>
+
+                                            <div class="time-inputs" role="group" aria-labelledby="boy-time-label">
+
                                                 <div class="select-wrapper">
-                                                    <select id="tob-hh" aria-label="Birth Hour">
+                                                    <select id="tob-hh" aria-label="Hour">
                                                         <option value="" selected disabled>HH</option>
                                                         <option>01</option>
                                                         <option>02</option>
@@ -166,11 +185,12 @@
                                                         <option>11</option>
                                                         <option>12</option>
                                                     </select>
-                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
-                                                        aria-hidden="true">
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon"
+                                                        alt="dropdown icon">
                                                 </div>
+
                                                 <div class="select-wrapper">
-                                                    <select id="tob-mm" aria-label="birth minutes">
+                                                    <select id="tob-mm" aria-label="Minutes">
                                                         <option value="" selected disabled>MM</option>
                                                         <option>00</option>
                                                         <option>05</option>
@@ -185,17 +205,19 @@
                                                         <option>50</option>
                                                         <option>55</option>
                                                     </select>
-                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
-                                                        aria-hidden="true">
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon"
+                                                        alt="dropdown icon">
                                                 </div>
+
                                                 <div class="select-wrapper">
                                                     <select id="tob-ampm" aria-label="AM or PM">
                                                         <option value="AM">AM</option>
                                                         <option value="PM">PM</option>
                                                     </select>
-                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
-                                                        aria-hidden="true">
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon"
+                                                        alt="dropdown icon">
                                                 </div>
+
                                             </div>
                                         </div>
 
@@ -203,6 +225,7 @@
                                             <label for="boy-location">Location</label>
                                             <input type="text" id="boy-location" placeholder="Enter your Location">
                                         </div>
+
                                     </div>
 
                                     <div class="checkbox-group">
@@ -215,11 +238,10 @@
                                     <div class="form-group">
                                         <label for="boy-type">Type *</label>
                                         <div class="select-wrapper type-full">
-                                            <select id="boy-type" required>
+                                            <select id="boy-type" required aria-label="Select type">
                                                 <option value="">Select Type</option>
                                             </select>
-                                            <img src="Images/arrow-down-red.svg" class="arrow-icon" alt=""
-                                                aria-hidden="true">
+                                            <img src="Images/arrow-down-red.svg" class="arrow-icon" alt="dropdown icon">
                                         </div>
                                     </div>
 
@@ -227,8 +249,97 @@
                                         <button type="submit" class="match-btn">Match Your Kundli</button>
                                     </div>
                                 </div>
+
                             </div>
+                        </form>
+
+                        <!-- ================= GIRL FORM ================= -->
+                        <form class="match-form tab-content" id="girl-form">
+                            <div class="input-grid">
+
+                                <div class="form-group">
+                                    <label for="girl-name">Full Name</label>
+                                    <input type="text" id="girl-name" placeholder="Enter Girl's Full Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="girl-dob">Date of Birth</label>
+                                    <div class="date-input-wrapper">
+                                        <input type="text" id="girl-dob" placeholder="Enter your Date of Birth">
+                                        <img src="Images/date.svg" class="icon-date" alt="Select date">
+                                    </div>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <div class="time-location-row">
+
+                                        <div class="time-section">
+                                            <label id="girl-time-label">Time of Birth</label>
+
+                                            <div class="time-inputs" role="group" aria-labelledby="girl-time-label">
+
+                                                <div class="select-wrapper">
+                                                    <select aria-label="Hour">
+                                                        <option>HH</option>
+                                                    </select>
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon"
+                                                        alt="dropdown icon">
+                                                </div>
+
+                                                <div class="select-wrapper">
+                                                    <select aria-label="Minutes">
+                                                        <option>MM</option>
+                                                    </select>
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon"
+                                                        alt="dropdown icon">
+                                                </div>
+
+                                                <div class="select-wrapper">
+                                                    <select aria-label="AM or PM">
+                                                        <option>AM</option>
+                                                        <option>PM</option>
+                                                    </select>
+                                                    <img src="Images/arrow-down-red.svg" class="arrow-icon"
+                                                        alt="dropdown icon">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="location-section">
+                                            <label for="girl-location">Location</label>
+                                            <input type="text" id="girl-location" placeholder="Enter your Location">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="no-time-girl">
+                                        <label for="no-time-girl">Don't know birth time.</label>
+                                    </div>
+                                </div>
+
+                                <div class="last-row">
+                                    <div class="form-group">
+                                        <label for="girl-type">Type *</label>
+                                        <div class="select-wrapper type-full">
+                                            <select id="girl-type" required aria-label="Select type">
+                                                <option>Select Type</option>
+                                            </select>
+                                            <img src="Images/arrow-down-red.svg" class="arrow-icon" alt="dropdown icon">
+                                        </div>
+                                    </div>
+
+                                    <div class="button-wrapper">
+                                        <button type="submit" class="match-btn">Match Your Kundli</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
                     </div>
+
     </section>
 
     <section class="kundli-analysis-section">
@@ -311,7 +422,7 @@
 
     <section class="faq-section">
         <div class="faq-container">
-            <h2 class="faq-title">Frequently Ask <span>Questions</span></h2>
+            <h2 class="faq-title reveal">Frequently Ask <span>Questions</span></h2>
 
             <div class="faq-wrapper">
                 <div class="faq-column">
@@ -323,7 +434,7 @@
                         <div class="faq-answer">
                             <p>Astrology is the study of the influence of celestial objects, such as the Sun, Moon, and
                                 planets, on human lives. It examines the positions of these cosmic entities at the time
-                                of a person's birth to understand their personality education, and other life aspects.
+                                of a person's birth to understand their personality, education, and other life aspects.
                             </p>
                         </div>
                     </div>
@@ -333,12 +444,22 @@
                             <h3>How do Astrology predictions help me deal with my problems?</h3>
                             <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
                         </div>
+                        <div class="faq-answer">
+                            <p>Astrology predictions provide a roadmap of your life's strengths and challenges. By
+                                understanding planetary influences, you can time your decisions better, prepare for
+                                upcoming obstacles, and find spiritual remedies to mitigate negative effects.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Are astrology predictions true?</h3>
                             <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                        <div class="faq-answer">
+                            <p>Astrology is a divine science based on mathematical calculations of planetary movements.
+                                While the predictions are based on ancient wisdom, their accuracy depends on the correct
+                                birth details and the expertise of the astrologer interpreting the chart.</p>
                         </div>
                     </div>
                 </div>
@@ -349,12 +470,22 @@
                             <h3>What type of questions can I ask an online astrologer?</h3>
                             <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
                         </div>
+                        <div class="faq-answer">
+                            <p>You can ask questions related to your career growth, marriage compatibility, financial
+                                stability, health concerns, or education. Whether it is about Shubh Muhurat or Dosha
+                                Nivaran, our experts provide guidance on all life aspects.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>How can online astro consultation help in predicting future?</h3>
                             <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
+                        </div>
+                        <div class="faq-answer">
+                            <p>Online consultation connects you with experienced Vedic experts who analyze your Kundli
+                                in real-time. They look at your current Dasha and planetary transits to predict future
+                                trends and offer immediate solutions for your peace of mind.</p>
                         </div>
                     </div>
 
@@ -363,6 +494,11 @@
                             <h3>Do I need to provide my personal details for a consultation?</h3>
                             <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
                         </div>
+                        <div class="faq-answer">
+                            <p>Yes, for an accurate reading, you need to provide your full name, date of birth, exact
+                                time of birth, and place of birth. These details are essential to calculate the precise
+                                position of planets at the moment you were born.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
@@ -370,13 +506,18 @@
                             <h3>How to Calculate Zodiac or Astrology Sign?</h3>
                             <img src="Images/down-arrow.svg" alt="Toggle" class="faq-icon">
                         </div>
+                        <div class="faq-answer">
+                            <p>Your Zodiac sign is determined by the position of the Moon (Moon Sign) or the Sun (Sun
+                                Sign) at the time of your birth. In Vedic astrology, the Moon sign is considered most
+                                important as it represents your mind and emotions.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-   
     <footer class="footer-section">
         <div class="footer-container">
             <div class="footer-content">
@@ -449,23 +590,58 @@
             </div>
         </div>
     </footer>
-    
+
     <div class="footer-bottom">
         <p>Copyright © 2026 astropeeth | Designed & developed by : Rirabh Consulting Services LLP</p>
     </div>
-    <script>
-        const minuteSelect = document.getElementById("tob-mm");
 
-        for (let i = 0; i < 60; i++) {
-            let val = i.toString().padStart(2, '0'); // 01, 02, 03...
-            let option = document.createElement("option");
+    <!-- SIGN IN MODAL -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-box">
 
-            option.value = val;
-            option.textContent = val;
+            <!-- CLOSE BUTTON -->
+            <span class="modal-close" id="closeModal">&times;</span>
 
-            minuteSelect.appendChild(option);
-        }
-    </script>
+            <!-- TOP SECTION -->
+            <div class="modal-header">
+                <h2>Get Consultation from Experts</h2>
+                <p class="highlight">First Chat Free</p>
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+
+                <h3>Sign In</h3>
+                <p class="subtitle">Enter your mobile number to continue</p>
+
+                <div class="input-box">
+                    <span>+91</span>
+                    <input type="tel" id="mobileInput" placeholder="Enter Mobile Number" maxlength="10"
+                        inputmode="numeric" pattern="[0-9]*">
+                </div>
+
+                <button class="otp-btn">Send OTP</button>
+
+                <button class="email-btn">
+                    Continue with Email
+                </button>
+
+                <p class="terms">
+                    By signing in, you agree to our <span>Terms</span> & <span>Privacy Policy</span>
+                </p>
+
+                <div class="app-links">
+                    <p>Download Our App</p>
+                    <div class="stores">
+                        <img src="Images/google-play.png" alt="">
+                        <img src="Images/app-store.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
     <script src="script.js" defer></script>
 </body>
 

@@ -1,109 +1,128 @@
-//Kundali Dropdown Menu Toggle Functionality
-document.getElementById('kundali-menu').addEventListener('click', function(e) {
-    e.stopPropagation();
-    const menu = this.querySelector('.dropdown-menu');
+document.addEventListener("DOMContentLoaded", () => {
 
-    menu.classList.toggle('show');
-    this.classList.toggle('active'); // 🔥 ye add karo
-});
-document.addEventListener('click', function() {
-    const menu = document.querySelector('.dropdown-menu');
-    if (menu && menu.classList.contains('show')) {
-        menu.classList.remove('show');
+    // ================= KUNDALI DROPDOWN =================
+    const kundaliMenu = document.getElementById('kundali-menu');
+
+    if (kundaliMenu) {
+        kundaliMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const menu = this.querySelector('.dropdown-menu');
+
+            if (menu) {
+                menu.classList.toggle('show');
+                this.classList.toggle('active');
+            }
+        });
+
+        document.addEventListener('click', function() {
+            const menu = document.querySelector('.dropdown-menu');
+            if (menu && menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                kundaliMenu.classList.remove('active');
+            }
+        });
     }
-});
 
+    // ================= SCROLL REVEAL =================
+    const revealElements = document.querySelectorAll('.reveal');
 
-/* Intersection Observer for Smooth Scroll Reveal */
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        } else {
-            const rect = entry.boundingClientRect;
-            if (rect.top > window.innerHeight || rect.bottom < 0) {
-                entry.target.classList.remove('active');
-            }
-        }
-    });
-}, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -10px 0px"
-});
-
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-
-//Side Scroll - Testimonals
-const scrollContainer = document.getElementById('testimonialScroll');
-const dots = document.querySelectorAll('.dot');
-
-scrollContainer.addEventListener('scroll', () => {
-    const width = scrollContainer.offsetWidth;
-    const activeIndex = Math.round(scrollContainer.scrollLeft / width);
-
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === activeIndex);
-    });
-});
-
-////Side Scroll - Blog
-const blogScroll = document.getElementById('blogScroll');
-const blogDots = document.querySelectorAll('.blog-dot');
-
-let isScrolling;
-
-blogScroll.addEventListener('scroll', () => {
-    window.clearTimeout(isScrolling);
-
-    isScrolling = setTimeout(() => {
-        const width = blogScroll.getBoundingClientRect().width;
-        const index = Math.round(blogScroll.scrollLeft / width);
-
-        blogDots.forEach((dot, i) => {
-            if (i === index) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }, 50);
-});
-
-//Faq Section
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const item = question.parentElement;
-        const icon = question.querySelector('img');
-        
-        document.querySelectorAll('.faq-item').forEach(otherItem => {
-            if (otherItem !== item) {
-                otherItem.classList.remove('active');
-                const otherIcon = otherItem.querySelector('.faq-question img');
-                otherIcon.src = 'Images/down-arrow.svg';
-                otherIcon.className = 'faq-icon';
-            }
+    if (revealElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    const rect = entry.boundingClientRect;
+                    if (rect.top > window.innerHeight || rect.bottom < 0) {
+                        entry.target.classList.remove('active');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -10px 0px"
         });
 
-        item.classList.toggle('active');
-        
-        if (item.classList.contains('active')) {
-            icon.src = 'Images/up-arrow.svg';
-            icon.className = 'faq-icon-up';
-        } else {
-            icon.src = 'Images/down-arrow.svg';
-            icon.className = 'faq-icon';
-        }
-    });
-});
+        revealElements.forEach((el) => observer.observe(el));
+    }
 
-//talk to astro 
-window.addEventListener('load', () => {
+    // ================= TESTIMONIAL SCROLL =================
+    const scrollContainer = document.getElementById('testimonialScroll');
+    const dots = document.querySelectorAll('.dot');
+
+    if (scrollContainer && dots.length > 0) {
+        scrollContainer.addEventListener('scroll', () => {
+            const width = scrollContainer.offsetWidth;
+            const activeIndex = Math.round(scrollContainer.scrollLeft / width);
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        });
+    }
+
+    // ================= BLOG SCROLL =================
+    const blogScroll = document.getElementById('blogScroll');
+    const blogDots = document.querySelectorAll('.blog-dot');
+
+    if (blogScroll && blogDots.length > 0) {
+        let isScrolling;
+
+        blogScroll.addEventListener('scroll', () => {
+            clearTimeout(isScrolling);
+
+            isScrolling = setTimeout(() => {
+                const width = blogScroll.getBoundingClientRect().width;
+                const index = Math.round(blogScroll.scrollLeft / width);
+
+                blogDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }, 50);
+        });
+    }
+
+    // ================= FAQ =================
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    if (faqQuestions.length > 0) {
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const icon = question.querySelector('img');
+
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        const otherIcon = otherItem.querySelector('.faq-question img');
+                        if (otherIcon) {
+                            otherIcon.src = 'Images/down-arrow.svg';
+                            otherIcon.className = 'faq-icon';
+                        }
+                    }
+                });
+
+                item.classList.toggle('active');
+
+                if (icon) {
+                    if (item.classList.contains('active')) {
+                        icon.src = 'Images/up-arrow.svg';
+                        icon.className = 'faq-icon-up';
+                    } else {
+                        icon.src = 'Images/down-arrow.svg';
+                        icon.className = 'faq-icon';
+                    }
+                }
+            });
+        });
+    }
+
+    // ================= SCROLL TO FILTER =================
     const urlParams = new URLSearchParams(window.location.search);
-    
+
     if (urlParams.get('scroll') === 'true') {
         const targetSection = document.getElementById('filter-section');
-        
+
         if (targetSection) {
             setTimeout(() => {
                 targetSection.scrollIntoView({
@@ -113,59 +132,53 @@ window.addEventListener('load', () => {
             }, 300);
         }
     }
-});
 
+    // ================= TRANSLATION =================
+    const originalTexts = {};
 
-
-// translation
-
-const originalTexts = {};
-
-// Save original English content
-function saveOriginalContent() {
-    document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        originalTexts[key] = el.innerHTML;
-    });
-}
-
-// Load language
-async function loadLanguage(lang) {
-
-    // Agar English select hua → original restore
-    if (lang === "en") {
+    function saveOriginalContent() {
         document.querySelectorAll("[data-key]").forEach(el => {
             const key = el.getAttribute("data-key");
-            if (originalTexts[key]) {
-                el.innerHTML = originalTexts[key];
+            originalTexts[key] = el.innerHTML;
+        });
+    }
+
+    async function loadLanguage(lang) {
+
+        if (lang === "en") {
+            document.querySelectorAll("[data-key]").forEach(el => {
+                const key = el.getAttribute("data-key");
+                if (originalTexts[key]) {
+                    el.innerHTML = originalTexts[key];
+                }
+            });
+
+            const currentLang = document.getElementById("current-lang");
+            if (currentLang) currentLang.innerText = "English";
+
+            localStorage.setItem("lang", "en");
+            return;
+        }
+
+        const res = await fetch(`lang/${lang}.json`);
+        const data = await res.json();
+
+        document.querySelectorAll("[data-key]").forEach(el => {
+            const key = el.getAttribute("data-key");
+            if (data[key]) {
+                el.innerText = data[key];
             }
         });
 
-        document.getElementById("current-lang").innerText = "English";
-        localStorage.setItem("lang", "en");
-        return;
+        const currentLang = document.getElementById("current-lang");
+        if (currentLang) {
+            currentLang.innerText = lang === "hi" ? "Hindi" : "Gujarati";
+        }
+
+        localStorage.setItem("lang", lang);
     }
 
-    // JSON load
-    const res = await fetch(`lang/${lang}.json`);
-    const data = await res.json();
-
-    document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (data[key]) {
-            el.innerText = data[key];
-        }
-    });
-
-    document.getElementById("current-lang").innerText =
-        lang === "hi" ? "Hindi" : "Gujarati";
-
-    localStorage.setItem("lang", lang);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    saveOriginalContent(); // 🔥 important
+    saveOriginalContent();
 
     const savedLang = localStorage.getItem("lang") || "en";
     loadLanguage(savedLang);
@@ -178,12 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-});
-
-
-// ================= MOBILE NAVIGATION =================
-document.addEventListener("DOMContentLoaded", function() {
-
+    // ================= MOBILE NAV =================
     const hamburger = document.getElementById('hamburger');
     const topStrip = document.querySelector('.top-strip');
 
@@ -193,9 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         window.addEventListener('scroll', () => {
-            if (topStrip.classList.contains('active')) {
-                topStrip.classList.remove('active');
-            }
+            topStrip.classList.remove('active');
         });
 
         document.addEventListener('click', (e) => {
@@ -203,6 +209,106 @@ document.addEventListener("DOMContentLoaded", function() {
                 topStrip.classList.remove('active');
             }
         });
+    }
+
+    // ================= SIGN IN POPUP =================
+    const modal = document.getElementById("authModal");
+    const openBtn = document.querySelector(".sign-in");
+    const closeBtn = document.getElementById("closeModal");
+    const mobileInput = document.getElementById("mobileInput");
+    const otpBtn = document.querySelector(".otp-btn");
+
+    if (modal && openBtn) {
+
+        const closeModal = () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        };
+
+        openBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        });
+
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+
+        if (mobileInput) {
+            mobileInput.addEventListener("input", () => {
+                mobileInput.value = mobileInput.value.replace(/\D/g, "");
+                if (mobileInput.value.length > 10) {
+                    mobileInput.value = mobileInput.value.slice(0, 10);
+                }
+            });
+        }
+
+        if (otpBtn) {
+            otpBtn.addEventListener("click", () => {
+                const number = mobileInput.value;
+
+                if (number.length !== 10) {
+                    alert("Enter valid 10-digit number");
+                    return;
+                }
+
+                console.log("Valid:", number);
+            });
+        }
+    }
+
+    // ================= JANAM KUNDALI MINUTE DROPDOWN =================
+    const minuteSelect = document.getElementById("tob-mm");
+
+    if (minuteSelect) {
+        for (let i = 0; i < 60; i++) {
+            let val = i.toString().padStart(2, '0');
+            let option = document.createElement("option");
+
+            option.value = val;
+            option.textContent = val;
+
+            minuteSelect.appendChild(option);
+        }
+    }
+
+    // ================= MATCHMAKING TABS =================
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    if (tabButtons.length > 0 && tabContents.length > 0) {
+
+        tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+
+                tabButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                    btn.setAttribute("aria-selected", "false");
+                });
+
+                button.classList.add("active");
+                button.setAttribute("aria-selected", "true");
+
+                const target = button.getAttribute("data-tab");
+
+                tabContents.forEach(content => {
+                    content.classList.remove("active");
+                });
+
+                const activeForm = document.getElementById(`${target}-form`);
+                if (activeForm) {
+                    activeForm.classList.add("active");
+                }
+
+            });
+        });
+
     }
 
 });

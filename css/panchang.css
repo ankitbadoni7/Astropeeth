@@ -1,7 +1,4 @@
-/* active underline only text */
-.strip-item.active span::after {
-    display: none;
-}
+
 .breadcrumb-nav {
     background-color: #ffffff;
     padding: 15px 0;
