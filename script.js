@@ -312,3 +312,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+// ===============================
+// CATEGORY FILTER FUNCTIONALITY
+// (Gemstone / Rudra / Idols etc. filtering system)
+// ===============================
+
+const filter = document.getElementById("categoryFilter");
+const cards = document.querySelectorAll(".gemstone-card");
+
+// Check if filter dropdown exists
+if (filter) {
+    filter.addEventListener("change", () => {
+
+        // Get selected category value from dropdown
+        const selected = filter.value;
+
+        // Loop through all cards and show/hide based on category
+        cards.forEach(card => {
+
+            // Get category of each card from data-category attribute
+            const category = card.getAttribute("data-category");
+
+            // Show card if matches selected filter OR if "all" is selected
+            if (selected === "all" || category === selected) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+}

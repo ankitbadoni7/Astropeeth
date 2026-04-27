@@ -11,7 +11,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/puja.css">
+    <link rel="stylesheet" href="css/shop.css">
     <title>Astropeeth</title>
 </head>
 
@@ -64,7 +64,7 @@
         <div class="container strip-container">
 
             <div class="strip-item" id="kundali-menu">
-
+               
                 <span class="with-arrow">
                     <span data-key="kundali">Kundali</span>
                     <img src="Images/arrow-down-red.svg" class="arrow" alt="">
@@ -77,38 +77,37 @@
             </div>
 
             <a href="panchang.html" class="strip-item">
-
+             
                 <span data-key="panchang">Panchang</span>
             </a>
 
             <a href="puja.html" class="strip-item">
-
+                
                 <span data-key="puja">Puja</span>
             </a>
 
             <a href="report.html" class="strip-item">
-
+               
                 <span data-key="reports">Reports</span>
             </a>
 
             <div class="strip-item">
-
+               
                 <span data-key="horoscope">Horoscope</span>
             </div>
 
-            <a href="shop.html" class="strip-item">
-                <img src="Images/shop.svg" alt="">
+            <div class="strip-item">
+              
                 <span data-key="shop">Shop</span>
-            </a>
+            </div>
 
             <div class="strip-item blogy">
-
+               
                 <span data-key="blog">Blog</span>
             </div>
 
         </div>
     </section>
-
 
     <nav class="breadcrumb-nav">
         <div class="container">
@@ -118,75 +117,191 @@
                     <img src="Images/arrow-right.svg" alt="arrow" class="breadcrumb-separator">
                 </li>
 
-                <li class="active">Puja</li>
+                <li class="active">Shop</li>
             </ul>
         </div>
     </nav>
 
-    <section class="puja-hero-section">
-        <div class="puja-container">
-            <div class="puja-wrapper">
+    <section class="gemstones-section">
+        <div class="gemstones-container">
+            <h2 class="gemstones-title reveal">Our Premium <span>Gemstones</span> Collection</h2>
 
-                <div class="puja-content-box">
-                    <h1 class="puja-main-title">
-                        Online <span class="highlight-text">Puja Services</span>
-                    </h1>
-                    <h2 class="puja-sub-title">
-                        Book Online Puja <br> Anytime, Anywhere
-                    </h2>
+            <div class="product-filter reveal">
+                <div class="filter-box">
+                    <select id="categoryFilter" aria-label="Select Category">
+                        <option value="all">Select Category</option>
+                        <option value="gemstone">Gemstone</option>
+                        <option value="rudra">Rudra Mala</option>
+                        <option value="idols">Idols</option>
+                        <option value="Jewellery">Jewellery</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- GRID -->
+            <div class="gemstones-grid reveal">
+
+                <div class="gemstone-card" data-category="gemstone">
+                    <div class="gemstone-img">
+                        <img src="Images/green.png" alt="Green Aventurine Bracelet">
+                    </div>
+                    <div class="gemstone-info">
+                        <h3>Green Aventurine Bracelet</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$120</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="puja-image-box">
-                    <img src="Images/puja.png" alt="Online Puja Services" class="puja-banner-img">
+                <div class="gemstone-card" data-category="gemstone">
+                    <div class="gemstone-img">
+                        <img src="Images/amethyst.png" alt="Amethyst Bracelet">
+                    </div>
+                    <div class="gemstone-info">
+                        <h3>Amethyst Bracelet</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$120</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gemstone-card" data-category="gemstone">
+                    <div class="gemstone-img">
+                        <img src="Images/blue.png" alt="Blue Sapphire">
+                    </div>
+                    <div class="gemstone-info">
+                        <h3>Blue Sapphire</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$120</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gemstone-card" data-category="rudra">
+                    <div class="gemstone-img">
+                        <img src="Images/green.png" alt="Rudra Mala">
+                    </div>
+                    <div class="gemstone-info">
+                        <h3>Rudra Mala</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$150</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </div>
-    </section>
 
-    <section class="shradh-services">
-        <div class="shradh-container">
-            <div class="shradh-grid">
+            <div class="gemstones-grid gemstones-grid-2 reveal">
 
-                <div class="shradh-card">
-                    <div class="shradh-img-box">
-                        <img src="Images/Shradh.png" alt="Shradh Pratipada">
+                <div class="gemstone-card" data-category="rudra">
+                    <div class="gemstone-img">
+                        <img src="Images/rudra.png" alt="Green Aventurine Bracelet">
                     </div>
-                    <div class="shradh-info">
-                        <h3 class="shradh-card-title">Shradh Pratipada Triveni Sangam</h3>
-                        <a href="shradh.html" class="shradh-btn">
-                            Explore <img src="Images/explore-arrow.svg" alt="arrow">
-                        </a>
+                    <div class="gemstone-info">
+                        <h3>Rudraksha</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$120</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="shradh-card">
-                    <div class="shradh-img-box">
-                        <img src="Images/Shradh.png" alt="Shradh Pratipada">
+                <div class="gemstone-card" data-category="jewellery">
+                    <div class="gemstone-img">
+                        <img src="Images/jewellery.png" alt="Amethyst Bracelet">
                     </div>
-                    <div class="shradh-info">
-                        <h3 class="shradh-card-title">Shradh Pratipada Triveni Sangam</h3>
-                        <a href="shradh.html" class="shradh-btn">
-                            Explore <img src="Images/explore-arrow.svg" alt="arrow">
-                        </a>
+                    <div class="gemstone-info">
+                        <h3>jewellery</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$120</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="shradh-card">
-                    <div class="shradh-img-box">
-                        <img src="Images/Shradh.png" alt="Shradh Pratipada">
+                <div class="gemstone-card" data-category="gemstone">
+                    <div class="gemstone-img">
+                        <img src="Images/green.png" alt="Blue Sapphire">
                     </div>
-                    <div class="shradh-info">
-                        <h3 class="shradh-card-title">Shradh Pratipada Triveni Sangam</h3>
-                        <a href="shradh.html" class="shradh-btn">
-                            Explore <img src="Images/explore-arrow.svg" alt="arrow">
-                        </a>
+                    <div class="gemstone-info">
+                        <h3>Green Aventurine Bracelet</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$120</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gemstone-card" data-category="bracelet">
+                    <div class="gemstone-img">
+                        <img src="Images/bracelets.png" alt="Green Aventurine Bracelet">
+                    </div>
+                    <div class="gemstone-info">
+                        <h3>Bracelet</h3>
+                        <div class="rating-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">
+                                <span class="score-main">5.0/</span><span class="score-max">5</span>
+                            </span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">$120</span>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
     </section>
+
 
     <footer class="footer-section">
         <div class="footer-container">
@@ -222,7 +337,7 @@
                     <div class="link-column">
                         <h3>Sitemap</h3>
                         <ul>
-                            <li><a href="janam kundali.html">Kundali</a></li>
+                            <li><a href="#">Kundali</a></li>
                             <li><a href="panchang.html">Panchang</a></li>
                             <li><a href="puja.html">Puja</a></li>
                             <li><a href="kundali matching.html">Kundli Matching</a></li>
@@ -243,9 +358,11 @@
                 </div>
 
                 <div class="footer-social">
-                    <h2>Lets Talk!</h2>
-                    <p>We are always here to discuss your spiritual needs, enhance your devotional journey, and support
-                        your sacred traditions with our offerings.</p>
+                    <div class="footer-social-text">
+                        <h2>Lets Talk!</h2>
+                        <p>We are always here to discuss your spiritual needs, enhance your devotional journey, and
+                            support your sacred traditions with our offerings.</p>
+                    </div>
                     <div class="social-icons">
                         <img src="Images/fb.svg" alt="Facebook">
                         <img src="Images/twitter.svg" alt="Twitter">
